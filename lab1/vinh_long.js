@@ -575,47 +575,15 @@ var jsondata = {
   ],
 };
 
-require([
-  "esri/Map",
-  "esri/views/MapView",
-  "esri/Graphic",
-  "esri/layers/GraphicsLayer",
-], function (Map, MapView, Graphic, GraphicsLayer) {
-  var map = new Map({
-    basemap: "topo-vector",
-  });
-  map.on("load", function () {
-    map.graphics.enableMouseEvents();
-  });
-
-  var view = new MapView({
-    container: "viewDiv",
-    map: map,
-    center: [106.6953, 10.7769],
-    zoom: 8,
-    highlightOptions: {
-      color: "blue",
-    },
-  });
-
-  var createGraphic = function (data) {
-    return new Graphic({
-      geometry: data,
-      symbol: data.symbol,
-      attributes: data,
-      popupTemplate: data.popupTemplate,
-    });
-  };
-  var graphicsLayer = new GraphicsLayer();
-  //Nên xếp chồng theo thứ tự polygon->đường->điểm
-  jsondata.polygons.forEach(function (data) {
-    graphicsLayer.add(createGraphic(data));
-  });
-  jsondata.lines.forEach(function (data) {
-    graphicsLayer.add(createGraphic(data));
-  });
-  jsondata.points.forEach(function (data) {
-    graphicsLayer.add(createGraphic(data));
-  });
-  map.add(graphicsLayer);
+//Nên xếp chồng theo thứ tự polygon->đường->điểm
+jsondata.polygons.forEach(function (data) {
+  graphicsLayer.add(createGraphic(data));
 });
+jsondata.lines.forEach(function (data) {
+  graphicsLayer.add(createGraphic(data));
+});
+jsondata.points.forEach(function (data) {
+  graphicsLayer.add(createGraphic(data));
+});
+map.add(graphicsLayer);
+
