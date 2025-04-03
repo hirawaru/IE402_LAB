@@ -73,7 +73,15 @@
       sc_jsondata.polygons.forEach(function (data) {
         graphicsLayer.add(createGraphic(data));
       });
-
+      TV_jsondata.polygons.forEach(function (data) {
+        graphicsLayer.add(createGraphic(data));
+      });
+      TV_jsondata.lines.forEach(function (data) {
+        graphicsLayer.add(createGraphic(data));
+      });
+      TV_jsondata.points.forEach(function (data) {
+        graphicsLayer.add(createGraphic(data));
+      });
     });
 
   </script>
@@ -85,6 +93,7 @@
   <script src="./vinh_long.js"></script>
 
   <script src="./soc_trang.js"></script>
+  <script src="./tra_vinh.js"></script>
 
 </body>
 
