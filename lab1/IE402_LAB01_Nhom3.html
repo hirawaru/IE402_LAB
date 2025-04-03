@@ -82,6 +82,16 @@
       TV_jsondata.points.forEach(function (data) {
         graphicsLayer.add(createGraphic(data));
       });
+
+      LA_jsondata.points.forEach(function (data) {
+        graphicsLayer.add(createGraphic(data));
+      });
+      jsondata.lines.forEach(function (data) {
+        graphicsLayer.add(createGraphic(data));
+      });
+      LA_jsondata.polygons.forEach(function (data) {
+        graphicsLayer.add(createGraphic(data));
+      });
     });
 
   </script>

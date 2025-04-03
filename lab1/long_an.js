@@ -1,17 +1,17 @@
-var point_template_point = {
+var LA_point_template_point = {
   title: "{Name}",
   content: "Địa điểm này ở <b>{Location}</b>.",
 };
-var point_template_line = {
+var LA_point_template_line = {
   title: "{Name}",
   content: "Tổng chiều dài của quốc lộ: <b>{length}</b> km.<br>",
 };
-var point_template_polygon = {
+var LA_point_template_polygon = {
   title: "{Name}",
   content:
     "Dân số: <b>{Population}</b> người.<br>" + "Diện tích: <b>{Area}</b> km².",
 };
-var jsondata = {
+var LA_jsondata = {
   points: [
     {
       type: "point",
@@ -56,7 +56,7 @@ var jsondata = {
         height: "36px",
         yoffset: "12px",
       },
-      popupTemplate: point_template_point,
+      popupTemplate: LA_point_template_point,
     },
 
     {
@@ -72,7 +72,7 @@ var jsondata = {
         height: "36px",
         yoffset: "12px",
       },
-      popupTemplate: point_template_point,
+      popupTemplate: LA_point_template_point,
     },
   ],
   lines: [
@@ -8710,50 +8710,7 @@ var jsondata = {
           width: 1,
         },
       },
-      popupTemplate: point_template_polygon,
+      popupTemplate: LA_point_template_polygon,
     },
   ],
 };
-
-require([
-  "esri/Map",
-  "esri/views/MapView",
-  "esri/Graphic",
-  "esri/layers/GraphicsLayer",
-], function (Map, MapView, Graphic, GraphicsLayer) {
-  var map = new Map({
-    basemap: "topo-vector",
-  });
-  map.on("load", function () {
-    map.graphics.enableMouseEvents();
-  });
-
-  var view = new MapView({
-    container: "viewDiv",
-    map: map,
-    center: [106.8033387, 10.8739831],
-    zoom: 15,
-    highlightOptions: {
-      color: "blue",
-    },
-  });
-  var createGraphic = function (data) {
-    return new Graphic({
-      geometry: data,
-      symbol: data.symbol,
-      attributes: data,
-      popupTemplate: data.popupTemplate,
-    });
-  };
-  var graphicsLayer = new GraphicsLayer();
-  jsondata.points.forEach(function (data) {
-    graphicsLayer.add(createGraphic(data));
-  });
-  jsondata.lines.forEach(function (data) {
-    graphicsLayer.add(createGraphic(data));
-  });
-  jsondata.polygons.forEach(function (data) {
-    graphicsLayer.add(createGraphic(data));
-  });
-  map.add(graphicsLayer);
-});
