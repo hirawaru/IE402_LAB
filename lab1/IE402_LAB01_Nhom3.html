@@ -55,22 +55,22 @@
       // Create a graphics layer
       var graphicsLayer = new GraphicsLayer();
       map.add(graphicsLayer);
-      jsondata.points.forEach(function (data) {
+      jsondata.polygons.forEach(function (data) {
         graphicsLayer.add(createGraphic(data));
       });
       jsondata.lines.forEach(function (data) {
         graphicsLayer.add(createGraphic(data));
       });
-      jsondata.polygons.forEach(function (data) {
+      jsondata.points.forEach(function (data) {
         graphicsLayer.add(createGraphic(data));
       });
-      sc_jsondata.points.forEach(function (data) {
+      sc_jsondata.polygons.forEach(function (data) {
         graphicsLayer.add(createGraphic(data));
       });
       sc_jsondata.lines.forEach(function (data) {
         graphicsLayer.add(createGraphic(data));
       });
-      sc_jsondata.polygons.forEach(function (data) {
+      sc_jsondata.points.forEach(function (data) {
         graphicsLayer.add(createGraphic(data));
       });
       TV_jsondata.polygons.forEach(function (data) {
@@ -83,13 +83,13 @@
         graphicsLayer.add(createGraphic(data));
       });
 
-      LA_jsondata.points.forEach(function (data) {
-        graphicsLayer.add(createGraphic(data));
-      });
-      jsondata.lines.forEach(function (data) {
-        graphicsLayer.add(createGraphic(data));
-      });
       LA_jsondata.polygons.forEach(function (data) {
+        graphicsLayer.add(createGraphic(data));
+      });
+      LA_jsondata.lines.forEach(function (data) {
+        graphicsLayer.add(createGraphic(data));
+      });
+      LA_jsondata.points.forEach(function (data) {
         graphicsLayer.add(createGraphic(data));
       });
     });
