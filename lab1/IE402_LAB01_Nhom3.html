@@ -1,57 +1,119 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="initial-scale=1, maximum-scale=1, user-scalable=no"
+        />
+        <title>LAB01-Nhóm 3</title>
+        <style>
+            html,
+            body,
+            #viewDiv {
+                padding: 0;
+                margin: 0;
+                height: 100%;
+                width: 100%;
+            }
+        </style>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
-  <title>LAB01-Nhóm 3</title>
-  <style>
-    html,
-    body,
-    #viewDiv {
-      padding: 0;
-      margin: 0;
-      height: 100%;
-      width: 100%;
-    }
-  </style>
+        <link
+            rel="stylesheet"
+            href="https://js.arcgis.com/4.15/esri/themes/light/main.css"
+        />
+        <script src="https://js.arcgis.com/4.15/"></script>
 
-  <link rel="stylesheet" href="https://js.arcgis.com/4.15/esri/themes/light/main.css">
-  <script src="https://js.arcgis.com/4.15/"></script>
+        <script>
+            require([
+                "esri/Map",
+                "esri/views/MapView",
+                "esri/Graphic",
+                "esri/layers/GraphicsLayer",
+            ], function (Map, MapView, Graphic, GraphicsLayer) {
+                var map = new Map({
+                    basemap: "topo-vector",
+                });
+                map.on("load", function () {
+                    map.graphics.enableMouseEvents();
+                });
 
-  <script>
-    require([
-      "esri/Map",
-      "esri/views/MapView",
-      "esri/Graphic",
-      "esri/layers/GraphicsLayer"
-    ], function (Map, MapView, Graphic, GraphicsLayer) {
+                var view = new MapView({
+                    container: "viewDiv",
+                    map: map,
+                    center: [106.6953, 10.7769],
+                    zoom: 8,
+                    highlightOptions: {
+                        color: "blue",
+                    },
+                });
+                var createGraphic = function (data) {
+                    return new Graphic({
+                        geometry: data,
+                        symbol: data.symbol,
+                        attributes: data,
+                        popupTemplate: data.popupTemplate,
+                    });
+                };
 
-      var map = new Map({
-        basemap: "topo-vector"
-      });
-      map.on("load", function () {
-        map.graphics.enableMouseEvents();
-      });
+                // Create a graphics layer
+                var graphicsLayer = new GraphicsLayer();
+                map.add(graphicsLayer);
+                jsondata.points.forEach(function (data) {
+                    graphicsLayer.add(createGraphic(data));
+                });
+                jsondata.lines.forEach(function (data) {
+                    graphicsLayer.add(createGraphic(data));
+                });
+                jsondata.polygons.forEach(function (data) {
+                    graphicsLayer.add(createGraphic(data));
+                });
+                sc_jsondata.points.forEach(function (data) {
+                    graphicsLayer.add(createGraphic(data));
+                });
+                sc_jsondata.lines.forEach(function (data) {
+                    graphicsLayer.add(createGraphic(data));
+                });
+                sc_jsondata.polygons.forEach(function (data) {
+                    graphicsLayer.add(createGraphic(data));
+                });
+                TV_jsondata.polygons.forEach(function (data) {
+                    graphicsLayer.add(createGraphic(data));
+                });
+                TV_jsondata.lines.forEach(function (data) {
+                    graphicsLayer.add(createGraphic(data));
+                });
+                TV_jsondata.points.forEach(function (data) {
+                    graphicsLayer.add(createGraphic(data));
+                });
 
-      var view = new MapView({
-        container: "viewDiv",
-        map: map,
-        center: [106.6953, 10.7769],
-        zoom: 8,
-        highlightOptions: {
-          color: "blue"
-        }
-      });
-      var createGraphic = function (data) {
-        return new Graphic({
-          geometry: data,
-          symbol: data.symbol,
-          attributes: data,
-          popupTemplate: data.popupTemplate
-        });
-      };
+                LA_jsondata.points.forEach(function (data) {
+                    graphicsLayer.add(createGraphic(data));
+                });
+                LA_jsondata.lines.forEach(function (data) {
+                    graphicsLayer.add(createGraphic(data));
+                });
+                LA_jsondata.polygons.forEach(function (data) {
+                    graphicsLayer.add(createGraphic(data));
+                });
 
+                ag_jsondata.polygons.forEach(function (data) {
+                    graphicsLayer.add(createGraphic(data));
+                });
+                ag_jsondata.lines.forEach(function (data) {
+                    graphicsLayer.add(createGraphic(data));
+                });
+                ag_jsondata.points.forEach(function (data) {
+                    graphicsLayer.add(createGraphic(data));
+                });
+            });
+        </script>
+    </head>
+
+    <body>
+        <div id="viewDiv"></div>
+        <script src="./vinh_long.js"></script>
+      
       // Create a graphics layer
       var graphicsLayer = new GraphicsLayer();
       map.add(graphicsLayer);
@@ -94,19 +156,12 @@
       });
     });
 
-  </script>
+        <script src="./soc_trang.js"></script>
 
-</head>
+        <script src="./tra_vinh.js"></script>
 
-<body>
-  <div id="viewDiv"></div>
-  <script src="./vinh_long.js"></script>
+        <script src="./long_an.js"></script>
 
-  <script src="./soc_trang.js"></script>
-  <script src="./tra_vinh.js"></script>
-
-  <script src="./long_an.js"></script>
-
-</body>
-
+        <script src="./an_giang.js"></script>
+    </body>
 </html>
