@@ -107,6 +107,28 @@
                     graphicsLayer.add(createGraphic(data));
                 });
 
+                DT_jsondata.polygons.forEach(function (data) {
+                    graphicsLayer.add(createGraphic(data));
+                });
+                DT_jsondata.lines.forEach(function (data) {
+                    graphicsLayer.add(createGraphic(data));
+                });
+                DT_jsondata.points.forEach(function (data) {
+                    graphicsLayer.add(createGraphic(data));
+                });
+
+
+                HCM_jsondata.polygons.forEach(function (data) {
+                    graphicsLayer.add(createGraphic(data));
+                });
+                HCM_jsondata.lines.forEach(function (data) {
+                    graphicsLayer.add(createGraphic(data));
+                });
+                HCM_jsondata.points.forEach(function (data) {
+                    graphicsLayer.add(createGraphic(data));
+                });
+
+
             });
         </script>
     </head>
@@ -122,6 +144,11 @@
         <script src="./long_an.js"></script>
 
         <script src="./an_giang.js"></script>
+
+        <script src="./dong_thap.js"></script>
+
+        <script src="./tp_hcm.js"></script>
+
 
     </body>
 </html>
