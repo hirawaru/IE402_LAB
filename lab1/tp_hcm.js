@@ -5051,7 +5051,7 @@ var HCM_jsondata = {
         type: "simple-fill",
         color: [34, 139, 34, 0.4],
         outline: {
-          color: [255, 255, 255],
+          color: [0, 0, 0],
           width: 1,
         },
       },

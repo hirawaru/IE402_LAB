@@ -59,28 +59,23 @@
         // Create a graphics layer
         var graphicsLayer = new GraphicsLayer();
         map.add(graphicsLayer);
-        jsondata.points.forEach(function (data) {
-          graphicsLayer.add(createGraphic(data));
-        });
-        jsondata.lines.forEach(function (data) {
-          graphicsLayer.add(createGraphic(data));
-        });
+        // Polygon layer
         jsondata.polygons.forEach(function (data) {
+          graphicsLayer.add(createGraphic(data));
+        });
+        tg_jsondata.polygons.forEach(function (data) {
           graphicsLayer.add(createGraphic(data));
         });
         BT_jsondata.polygons.forEach(function (data) {
           graphicsLayer.add(createGraphic(data));
         });
-        BT_jsondata.lines.forEach(function (data) {
+        LA_jsondata.polygons.forEach(function (data) {
           graphicsLayer.add(createGraphic(data));
         });
-        BT_jsondata.points.forEach(function (data) {
+        ag_jsondata.polygons.forEach(function (data) {
           graphicsLayer.add(createGraphic(data));
         });
-        sc_jsondata.points.forEach(function (data) {
-          graphicsLayer.add(createGraphic(data));
-        });
-        sc_jsondata.lines.forEach(function (data) {
+        DT_jsondata.polygons.forEach(function (data) {
           graphicsLayer.add(createGraphic(data));
         });
         sc_jsondata.polygons.forEach(function (data) {
@@ -89,47 +84,62 @@
         TV_jsondata.polygons.forEach(function (data) {
           graphicsLayer.add(createGraphic(data));
         });
-        TV_jsondata.lines.forEach(function (data) {
-          graphicsLayer.add(createGraphic(data));
-        });
-        TV_jsondata.points.forEach(function (data) {
+        HCM_jsondata.polygons.forEach(function (data) {
           graphicsLayer.add(createGraphic(data));
         });
 
-        LA_jsondata.points.forEach(function (data) {
+        // Lines layer
+        jsondata.lines.forEach(function (data) {
+          graphicsLayer.add(createGraphic(data));
+        });
+        tg_jsondata.lines.forEach(function (data) {
+          graphicsLayer.add(createGraphic(data));
+        });
+        BT_jsondata.lines.forEach(function (data) {
+          graphicsLayer.add(createGraphic(data));
+        });
+        sc_jsondata.lines.forEach(function (data) {
+          graphicsLayer.add(createGraphic(data));
+        });
+        TV_jsondata.lines.forEach(function (data) {
           graphicsLayer.add(createGraphic(data));
         });
         LA_jsondata.lines.forEach(function (data) {
           graphicsLayer.add(createGraphic(data));
         });
-        LA_jsondata.polygons.forEach(function (data) {
-          graphicsLayer.add(createGraphic(data));
-        });
-
-        ag_jsondata.polygons.forEach(function (data) {
-          graphicsLayer.add(createGraphic(data));
-        });
         ag_jsondata.lines.forEach(function (data) {
           graphicsLayer.add(createGraphic(data));
         });
-        ag_jsondata.points.forEach(function (data) {
-          graphicsLayer.add(createGraphic(data));
-        });
-
-        DT_jsondata.polygons.forEach(function (data) {
+        HCM_jsondata.lines.forEach(function (data) {
           graphicsLayer.add(createGraphic(data));
         });
         DT_jsondata.lines.forEach(function (data) {
           graphicsLayer.add(createGraphic(data));
         });
-        DT_jsondata.points.forEach(function (data) {
-          graphicsLayer.add(createGraphic(data));
-        });
 
-        HCM_jsondata.polygons.forEach(function (data) {
+        // Points layer
+        jsondata.points.forEach(function (data) {
           graphicsLayer.add(createGraphic(data));
         });
-        HCM_jsondata.lines.forEach(function (data) {
+        tg_jsondata.points.forEach(function (data) {
+          graphicsLayer.add(createGraphic(data));
+        });
+        BT_jsondata.points.forEach(function (data) {
+          graphicsLayer.add(createGraphic(data));
+        });
+        sc_jsondata.points.forEach(function (data) {
+          graphicsLayer.add(createGraphic(data));
+        });
+        TV_jsondata.points.forEach(function (data) {
+          graphicsLayer.add(createGraphic(data));
+        });
+        LA_jsondata.points.forEach(function (data) {
+          graphicsLayer.add(createGraphic(data));
+        });
+        ag_jsondata.points.forEach(function (data) {
+          graphicsLayer.add(createGraphic(data));
+        });
+        DT_jsondata.points.forEach(function (data) {
           graphicsLayer.add(createGraphic(data));
         });
         HCM_jsondata.points.forEach(function (data) {
@@ -152,6 +162,11 @@
     <script src="./long_an.js"></script>
 
     <script src="./an_giang.js"></script>
+
     <script src="./dong_thap.js"></script>
+
+    <script src="./tp_hcm.js"></script>
+
+    <script src="./tien_giang.js"></script>
   </body>
 </html>
