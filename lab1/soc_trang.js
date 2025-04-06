@@ -58,8 +58,8 @@ var sc_jsondata = {
             symbol: {
                 type: "picture-marker",
                 url: "./icons/cau.png",
-                width: "48px",
-                height: "48px",
+                width: "36px",
+                height: "36px",
                 yoffset: "12px",
             },
             popupTemplate: sc_template_point,
