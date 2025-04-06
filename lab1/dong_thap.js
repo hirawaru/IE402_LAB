@@ -26,8 +26,8 @@ var DT_jsondata = {
       symbol: {
         type: "picture-marker",
         url: "./icons/river.png",
-        width: "24px",
-        height: "24px",
+        width: "36px",
+        height: "36px",
         yoffset: "12px",
       },
       popupTemplate: DT_template_point,
