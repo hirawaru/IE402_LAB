@@ -1,0 +1,141 @@
+<html></html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="initial-scale=1,maximum-scale=1,user-scalable=no"
+    />
+  
+<title>Chợ bến thành</title>
+
+    <link
+      rel="stylesheet"
+      href="https://js.arcgis.com/4.29/esri/themes/light/main.css"
+    />
+    <script src="https://js.arcgis.com/4.29/"></script>
+
+    <style>
+      html,
+      body,
+      #viewDiv {
+        padding: 0;
+        margin: 0;
+        height: 100%;
+        width: 100%;
+      }
+
+    </style>
+    <script>
+	let popup_template = {
+					title: "{Name}",
+					content: "This {type} at <b>{Location}</b>."
+				};
+	let jsondata = {
+		points: [
+			{
+				type: "point",
+				x: 106.79572122639568, 
+				y: 10.872012825179635,
+				z: 1010,
+				symbol: {
+					type: "simple-marker",
+					color: [226, 119, 40],
+					outline: {
+						color: [255, 255, 255],
+						width: 2
+					}
+				},
+				Name: "Point 01",
+				Location: "location point 01",
+				popupTemplate: popup_template
+			}
+		],
+		lines: [
+			{
+				type: "polyline",
+				paths: [
+                [106.69831470596871, 10.77205169316483, 5],
+                [106.69765756476028, 10.77312323541546, 5],
+				],
+				symbol: {
+					type: "simple-line",
+					color: [226, 119, 40],
+					width: 2
+				},
+				Name: "line 01",
+				Location: "location line 01",
+				popupTemplate: popup_template
+			}
+		],
+		polygons: [
+			{
+				type: "polygon",
+				rings: [
+                [106.698938,10.771424,100],
+                [106.697691,10.771424,100],
+				[106.697034,10.773750,100],
+                [106.698281,10.773750,100],
+                [106.698938,10.771424,100],
+				],
+				symbol: {
+					type: "simple-fill", 
+					color: [227, 139, 79, 0.6],
+					outline: {
+						color: [255, 255, 255],
+						width: 1
+					}
+				}
+			}
+		]
+	}
+      require([
+        "esri/Map",
+        "esri/views/SceneView",
+        "esri/layers/GraphicsLayer",
+		"esri/Graphic"], function(
+        Map, SceneView, GraphicsLayer, Graphic
+      ) {
+
+        const map = new Map({
+          basemap: "topo-vector",
+          ground: "world-elevation"
+        });
+
+        const view = new SceneView({
+          container: "viewDiv",
+          map: map,
+          camera: {
+            position: [106.69845597091415, 10.769024419182566, 300],
+            heading: 0,
+            tilt: 50
+          }
+        });
+		var createGraphic = function (data) {
+			return new Graphic({
+				geometry: data,
+				symbol: data.symbol,
+				attributes: data,
+				popupTemplate: data.popupTemplate
+			});
+		}; 
+        var graphicsLayer = new GraphicsLayer();
+		
+		jsondata.points.forEach(function(data){
+			graphicsLayer.add(createGraphic(data));
+		});
+		jsondata.lines.forEach(function(data){
+		 	graphicsLayer.add(createGraphic(data));
+		});
+		jsondata.polygons.forEach(function(data){
+			graphicsLayer.add(createGraphic(data));
+		});
+        
+        map.add(graphicsLayer);
+      });
+    </script>
+  </head>
+
+  <body>
+    <div id="viewDiv"></div>
+  </body>
+</html>
