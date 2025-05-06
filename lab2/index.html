@@ -59,7 +59,9 @@
           responseType: "json",
         };
         // request json
-        esriRequest("./data.json", json_options).then(function (response) {
+        esriRequest("./cuaChinhData/data.json", json_options).then(function (
+          response
+        ) {
           var graphicsLayer = new GraphicsLayer();
           console.log(response);
           response.data.forEach(function (data) {
@@ -68,8 +70,9 @@
           map.add(graphicsLayer);
         });
         // geojson layer
+        //Cửa chính
         const geojsonLayer = new GeoJSONLayer({
-          url: "./data.geojson",
+          url: "./cuaChinhData/data.geojson",
         });
 
         geojsonLayer.renderer = {
@@ -79,14 +82,15 @@
             symbolLayers: [
               {
                 type: "extrude",
-                size: 100,
+                size: 4.5,
                 material: {
-                  color: "#7eadf7",
+                  color: "#D3D3D3",
                 },
               },
             ],
           },
         };
+
         const map = new Map({
           basemap: "topo-vector",
           ground: "world-elevation",
