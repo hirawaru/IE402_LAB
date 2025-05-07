@@ -1,0 +1,85 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    106.7000837605674,10.779644871785353,0
+                ]
+            },
+            "id": "1"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    106.7000591514757,10.779667926957915,0
+                ]
+            },
+            "id": "2"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    106.70004064424987,10.779685317147564,0
+                ]
+            },
+            "id": "3"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    106.70002240522041,10.77970244385247,0
+                ]
+            },
+            "id": "4"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    106.70000416620114,10.779718780095164,0
+                ]
+            },
+            "id": "5"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    106.69998458606715,10.779737224236822,0
+                ]
+            },
+            "id": "6"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    106.69996554238725,10.779755668377335,0
+                ]
+            },
+            "id": "7"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    106.69994623048031,10.779773585539312,0
+                ]
+            },
+            "id": "8"
+        }
+    ]
+}

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+	<title>3D - Building Map</title>
+
+	<style>
+		html,
+		body,
+		#viewDiv {
+			padding: 0;
+			margin: 0;
+			height: 100%;
+			width: 100%;
+		}
+	</style>
+
+	<link rel="stylesheet" href="https://js.arcgis.com/4.29/esri/themes/light/main.css" />
+	<script src="https://js.arcgis.com/4.29/"></script>
+
+	<script>
+		require([
+			"esri/Map",
+			"esri/views/SceneView",
+			"esri/layers/GeoJSONLayer",
+			"esri/layers/SceneLayer",
+			"esri/layers/GraphicsLayer",
+			"esri/Graphic",
+			"esri/request"
+		], function (Map, SceneView, GeoJSONLayer, SceneLayer, GraphicsLayer, Graphic, esriRequest) {        
+			const map = new Map({
+				basemap: "topo-vector",
+				ground: "world-elevation"
+			});
+
+			const view = new SceneView({
+				container: "viewDiv",
+				map: map,
+				camera: {
+					position: [106.699981, 10.778363, 80],
+					heading: 0,
+					tilt: 70
+				}
+			});
+
+			// Hàm sao chép vào clipboard
+			function copyTextToClipboard(text) {
+                if (!navigator.clipboard) {
+                    console.error("Clipboard API not supported.");
+                    return;
+                }
+                navigator.clipboard.writeText(text).then(function() {
+                    console.log('Đã sao chép vào clipboard thành công!');
+                }, function(err) {
+                    console.error('Không thể sao chép văn bản: ', err);
+                });
+            }
+
+            // Sự kiện nhấp chuột trên bản đồ
+            view.on("click", function(event) {
+                // Lấy tọa độ nhấp chuột
+                const latLng = event.mapPoint; 
+                console.log(`Tọa độ đã nhấp: (${latLng.longitude.toFixed(6)}, ${latLng.latitude.toFixed(6)})`);
+
+                // Sao chép tọa độ vào clipboard
+                const coordinateString = `(${latLng.longitude.toFixed(6)}, ${latLng.latitude.toFixed(6)})`;
+                copyTextToClipboard(coordinateString);
+            });
+
+
+
+			const geojsonLayer = new GeoJSONLayer({
+				url: "./stair.geojson", // Đường dẫn đến tệp GeoJSON
+				elevationInfo: {
+					mode: "relative-to-ground"
+					// offset: 0.2 // Độ cao 0.2 mét tương đương với 20 cm
+				},
+				renderer: {
+					type: "simple",
+					symbol: {
+						type: "polygon-3d", // Kết xuất đối tượng dưới dạng 3D
+						symbolLayers: [{
+							type: "extrude", // Kéo dài khối
+							// size: { field: "height" }, // Chiều cao của khối là 20 cm
+							material: { color: "gray" }
+						}]
+					},
+					visualVariables: [{
+						type: "size",
+						field: "height",  // Sử dụng trường height trong GeoJSON để thiết lập chiều cao
+						valueUnit: "meters" // Đơn vị chiều cao là mét
+					}]
+				}
+			});
+			map.add(geojsonLayer);
+		});
+
+	</script>
+</head>
+
+<body>
+	<div id="viewDiv"></div>
+</body>
+
+</html>

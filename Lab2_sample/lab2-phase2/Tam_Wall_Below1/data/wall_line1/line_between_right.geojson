@@ -1,0 +1,83 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [106.699919, 10.779792, 4.3],
+                    [106.700087, 10.779638, 4.3]
+                ]
+            },
+            "properties": {
+                "height": 0.1,      
+                "width": 0.3,     
+                "depth": 0.3
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [106.699911, 10.779783, 4.3],
+                    [106.699920, 10.779792, 4.3]
+                ]
+            },
+            "properties": {
+                "height": 0.2,      
+                "width": 0.2,     
+                "depth": 0.2
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [106.69987489, 10.77981630, 4.3], 
+                    [106.699912, 10.779783, 4.3]
+                ]
+            },
+            "properties": {
+                "height": 0.2,      
+                "width": 0.2,     
+                "depth": 0.2
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [106.699882, 10.779822, 4.3],
+                    [106.69987448, 10.77981563, 4.3]
+                ]
+            },
+            "properties": {
+                "height": 0.2,      
+                "width": 0.2,     
+                "depth": 0.2
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [106.70008721, 10.77963965, 4.3],
+                    [106.70020751, 10.77976597, 4.3],
+                    [106.70010293, 10.77986242, 4.3],
+                    [106.70028352, 10.78005534, 4.3]  
+                ]
+            },
+            "properties": {
+                "height": 0.2,      
+                "width": 0.2,     
+                "depth": 0.2 
+            }
+        }
+        
+    ]
+}

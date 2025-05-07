@@ -1,0 +1,37 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "pillarType": "side",
+                "width": 1,
+                "height": 16.3,
+                "depth": 0.2,
+                "heading": 133,
+                "color": "#fbe5bf"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [106.70008897889589,10.779645266968533,0]
+            },
+            "id": "10"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "pillarType": "side",
+                "width": 1,
+                "height": 16.3,
+                "depth": 0.2,
+                "heading": 133,
+                "color": "#fbe5bf"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [106.70020184800546,10.779763914233873,0]
+            },
+            "id": "16"
+        }
+    ]
+}

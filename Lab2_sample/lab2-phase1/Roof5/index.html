@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>Lab 2</title>
+    <link rel="stylesheet" href="https://js.arcgis.com/4.15/esri/themes/light/main.css" />
+    <script src="https://js.arcgis.com/4.15/"></script>
+    <style>
+      html,
+      body,
+      #viewDiv {
+        padding: 0;
+        margin: 0;
+        height: 100%;
+        width: 100%;
+      }
+    </style>
+    <script>
+      require([
+        "esri/Map",
+        "esri/views/SceneView",
+        "esri/Graphic",
+        "esri/layers/GraphicsLayer",
+        "esri/geometry/Polygon"
+      ], function(Map, SceneView, Graphic, GraphicsLayer, Polygon) {
+        
+        
+        const map = new Map({
+          basemap: "topo-vector",
+          ground: "world-elevation"
+        });
+
+        
+        const view = new SceneView({
+          container: "viewDiv",
+          map: map,
+          camera: {
+            position: [106.69991575, 10.7799135, 200],
+            heading: -90,
+            tilt: 0
+          }
+        });
+
+        
+        const graphicsLayer = new GraphicsLayer();
+        map.add(graphicsLayer);
+
+			// Hàm sao chép vào clipboard
+			function copyTextToClipboard(text) {
+                if (!navigator.clipboard) {
+                    console.error("Clipboard API not supported.");
+                    return;
+                }
+                navigator.clipboard.writeText(text).then(function() {
+                    console.log('Đã sao chép vào clipboard thành công!');
+                }, function(err) {
+                    console.error('Không thể sao chép văn bản: ', err);
+                });
+            }
+            // var marker = L.marker([21.0285, 105.8542]).addTo(map);
+
+        // Sự kiện nhấp chuột trên bản đồ
+        view.on("click", function(event) {
+              // Lấy tọa độ nhấp chuột
+              const latLng = event.mapPoint; 
+              console.log(`Tọa độ đã nhấp: [${latLng.longitude.toFixed(8)}, ${latLng.latitude.toFixed(8)}]`);
+
+              // Sao chép tọa độ vào clipboard
+              const coordinateString = `[${latLng.longitude.toFixed(8)}, ${latLng.latitude.toFixed(8)}]`;
+              copyTextToClipboard(coordinateString);
+          });
+        
+          fetch('data/roof5.geojson')
+          .then(response => response.json())
+          .then(data => {
+            const features = data.features;
+
+            features.forEach(feature => {
+              const coords = feature.geometry.coordinates[0];
+
+              
+              let color;
+              switch (feature.properties.face) {
+                case "left":
+                case "right":
+                case "front":
+                case "behind":
+                  color = [141, 57, 23, 1];
+                  break;
+                case "bottom":
+                  color = [230, 230, 230, 1];
+                  break;
+                case "circle-side":
+                  color = [220, 190, 50, 1]
+                  break;                     
+                default:
+                  color = [255, 255, 255, 0.5];
+              }
+
+              const polygon = new Polygon({
+                rings: coords,
+                spatialReference: { wkid: 4326 }
+              });
+
+              const graphic = new Graphic({
+                geometry: polygon,
+                symbol: {
+                  type: "simple-fill",
+                  color: color,
+                  outline: {
+                    color: [0, 0, 0],
+                    width: 1
+                  }
+                }
+              });
+
+              graphicsLayer.add(graphic);
+            });
+          })
+        .catch(error => console.error('Error loading GeoJSON:', error));
+        
+      });
+    </script>
+  </head>
+  <body>
+    <div id="viewDiv"></div>
+  </body>
+</html>
