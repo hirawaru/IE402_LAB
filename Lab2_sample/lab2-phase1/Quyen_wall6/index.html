@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>Wall</title>
+    <!-- Updated to newer version of ArcGIS API -->
+    <link rel="stylesheet" href="https://js.arcgis.com/4.28/esri/themes/light/main.css" />
+    <script src="https://js.arcgis.com/4.28/"></script>
+    <style>
+        html,
+        body,
+        #viewDiv {
+            padding: 0;
+            margin: 0;
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+    <script>
+        require([
+            "esri/Map",
+            "esri/views/SceneView",
+            "esri/Graphic",
+            "esri/layers/GraphicsLayer",
+            "esri/geometry/Polygon",
+            "esri/symbols/SimpleFillSymbol"
+        ], function(Map, SceneView, Graphic, GraphicsLayer, Polygon, SimpleFillSymbol) {
+            const map = new Map({
+                basemap: "topo-vector",
+                ground: "world-elevation"
+            });
+
+            const view = new SceneView({
+                container: "viewDiv",
+                map: map,
+                camera: {
+                    position: [106.701172, 10.779905, 200],
+                    heading: -90,
+                    tilt: 30
+                }
+            });
+
+            const graphicsLayer = new GraphicsLayer();
+            map.add(graphicsLayer);
+
+            // Create a reusable symbol
+            const fillSymbol = new SimpleFillSymbol({
+                color: '#fbe5bf', // RGBA color
+                outline: {
+                    color: [0, 0, 0],
+                    width: 1
+                }
+            });
+
+            function drawRoof(url) {
+                fetch(url)
+                    .then(response => response.json())
+                    .then(data => {
+                        const features = data.features;
+                        features.forEach(feature => {
+                            const coords = feature.geometry.coordinates[0];
+                            const polygon = new Polygon({
+                                rings: coords,
+                                spatialReference: { wkid: 4326 }
+                            });
+
+                            const graphic = new Graphic({
+                                geometry: polygon,
+                                symbol: fillSymbol
+                            });
+
+                            graphicsLayer.add(graphic);
+                        });
+                    })
+                    .catch(error => console.error('Error loading GeoJSON:', error));
+            }
+
+            // Wait for the view to be ready before loading data
+            view.when(() => {
+                drawRoof('data/wall6.geojson');
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="viewDiv"></div>
+</body>
+</html>

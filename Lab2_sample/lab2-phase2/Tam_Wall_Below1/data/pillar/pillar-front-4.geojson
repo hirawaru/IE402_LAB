@@ -1,0 +1,51 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": { "type": "Point", "coordinates": [106.6997867, 10.7799113, 0] },
+            "properties": {}
+        },
+        {
+            "type": "Feature",
+            "geometry": { "type": "Point", "coordinates": [106.6997669,10.7799301, 0] },
+            "properties": {}
+        },
+        {
+            "type": "Feature",
+            "geometry": { "type": "Point", "coordinates": [106.6997474,10.7799484, 0] },
+            "properties": {}
+        },
+        {
+            "type": "Feature",
+            "geometry": { "type": "Point", "coordinates": [106.6997274, 10.7799674, 0] },
+            "properties": {}
+        },
+        {
+            "type": "Feature",
+            "geometry": { "type": "Point", "coordinates": [106.6997075,10.7799859, 0] },
+            "properties": {}
+        },
+        {
+            "type": "Feature",
+            "geometry": { "type": "Point", "coordinates": [106.6996877, 10.7800046, 0] },
+            "properties": {}
+        },
+        {
+            "type": "Feature",
+            "geometry": { "type": "Point", "coordinates": [106.6996678,10.7800236, 0] },
+            "properties": {}
+        },
+        {
+            "type": "Feature",
+            "geometry": { "type": "Point", "coordinates": [106.6996483,10.780042, 0] },
+            "properties": {}
+        },
+        
+        {"type":"Feature","geometry":{"type":"Point","coordinates":[106.6997784,10.7801649,0]},"properties":{}},
+        {"type":"Feature","geometry":{"type":"Point","coordinates":[106.6997986,10.7801465,0]},"properties":{}},
+        {"type":"Feature","geometry":{"type":"Point","coordinates":[106.6998186,10.7801276,0]},"properties":{}},
+        {"type":"Feature","geometry":{"type":"Point","coordinates":[106.6998383,10.7801091,0]},"properties":{}},
+        {"type":"Feature","geometry":{"type":"Point","coordinates":[106.6998556,10.7800929,0]},"properties":{}}
+    ]
+}
