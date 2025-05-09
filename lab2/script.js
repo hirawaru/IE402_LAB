@@ -16,6 +16,26 @@ function blockRenderer(height) {
   };
 }
 
+function GLBRenderer({ href, heading, pitch = 0, roll = 0 }) {
+  return {
+    type: "simple",
+    symbol: {
+      type: "point-3d",
+      symbolLayers: [
+        {
+          type: "object",
+          resource: {
+            href,
+          },
+          heading,
+          pitch,
+          roll,
+        },
+      ],
+    },
+  };
+}
+
 require([
   "esri/Map",
   "esri/views/SceneView",
@@ -39,13 +59,6 @@ require([
   GraphicsLayer,
   esriRequest
 ) {
-  const sketchLayer = new GraphicsLayer({
-    elevationInfo: {
-      mode: "absolute-height",
-    },
-    title: "Sketched geometries",
-  });
-
   const map = new Map({
     basemap: "topo-vector",
     ground: "world-elevation",
@@ -111,45 +124,85 @@ require([
   map.add(createGeoJsonLayer("cuaChinh/data7", blockRenderer(0.3))); //L N M L'
 
   //Thêm mesh
-  const mainGateL = new Point({
-    x: 106.6983156914999,
-    y: 10.7720521778461,
-    z: 20.2,
-  });
+  map.add(
+    createGeoJsonLayer(
+      "cuaChinh/middleGate",
+      GLBRenderer({
+        href: "./meshObject/cuaChinh/cuaGiua.glb",
+        heading: "328",
+      })
+    )
+  );
 
-  const mainGateR = new Point({
-    x: 106.80084488537197,
-    y: 10.867532728640802,
-    z: 20.2,
-  });
+  map.add(
+    createGeoJsonLayer(
+      "cuaChinh/rightGate",
+      GLBRenderer({
+        href: "./meshObject/cuaChinh/cuaPhai.glb",
+        heading: "328",
+      })
+    )
+  );
 
-  const mainGateM = new Point({
-    x: 106.80080197002785,
-    y: 10.86677410529397,
-    z: 20.2,
-  });
+  map.add(
+    createGeoJsonLayer(
+      "cuaChinh/leftGate",
+      GLBRenderer({
+        href: "./meshObject/cuaChinh/cuaTrai.glb",
+        heading: "328",
+      })
+    )
+  );
 
-  Mesh.createFromGLTF(mainGateM, "./meshObject/cuaChinh/cuaGiua.glb")
-    .then(function (geometry) {
-      geometry.scale(3, { origin: mainGateM });
-      geometry.rotate(0, 0, 203);
-      const graphic = new Graphic({
-        geometry,
-        symbol: {
-          type: "mesh-3d",
-          symbolLayers: [
-            {
-              type: "fill",
-              size: 10000,
-            },
-          ],
-        },
-      });
-      sketchLayer.add(graphic);
-    })
-    .catch(console.error);
+  map.add(
+    createGeoJsonLayer(
+      "cuaChinh/vent1",
+      GLBRenderer({
+        href: "./meshObject/cuaChinh/cuaThongGio.glb",
+        heading: "419",
+      })
+    )
+  );
 
-  map.add(sketchLayer);
+  map.add(
+    createGeoJsonLayer(
+      "cuaChinh/vent2",
+      GLBRenderer({
+        href: "./meshObject/cuaChinh/cuaThongGio.glb",
+        heading: "419",
+      })
+    )
+  );
+
+  map.add(
+    createGeoJsonLayer(
+      "cuaChinh/vent3",
+      GLBRenderer({
+        href: "./meshObject/cuaChinh/cuaThongGio.glb",
+        heading: "239.25",
+      })
+    )
+  );
+
+  map.add(
+    createGeoJsonLayer(
+      "cuaChinh/vent4",
+      GLBRenderer({
+        href: "./meshObject/cuaChinh/cuaThongGio.glb",
+        heading: "239.25",
+      })
+    )
+  );
+
+  map.add(
+    createGeoJsonLayer(
+      "cuaChinh/nameBoard",
+      GLBRenderer({
+        href: "./meshObject/cuaChinh/bangTen.glb",
+        heading: "328",
+      })
+    )
+  );
 
   //END: Cửa Chính
 });
