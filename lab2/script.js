@@ -110,7 +110,7 @@ require([
       renderer: renderer,
     });
   }
-  
+
   //START: Cửa Chính
   //Nửa bên trái
   //Cổng trái
@@ -123,6 +123,16 @@ require([
   map.add(createGeoJsonLayer("cuaChinh/data5", blockRenderer(5.8, "#D3D3D3"))); //L N U R
   map.add(createGeoJsonLayer("cuaChinh/data6", blockRenderer(1, "#D3D3D3"))); //J1 K1 U R
   map.add(createGeoJsonLayer("cuaChinh/data7", blockRenderer(0.3, "#D3D3D3"))); //L N M L'
+
+  map.add(createGeoJsonLayer("cuaBac/data", blockRenderer(4.5, "#D3D3D3"))); //P1 Q1 R1 S1, T1 U1 V1 W1
+  map.add(createGeoJsonLayer("cuaBac/data2", blockRenderer(1, "#D3D3D3"))); //Z1 A2 B2 C2, D2 E2 F2 G2
+  map.add(createGeoJsonLayer("cuaBac/data3", blockRenderer(0.3, "#D3D3D3"))); //P1 Q1 B2 C2, D2 E2 V1 W1
+  map.add(createGeoJsonLayer("cuaBac/data4", blockRenderer(4.5, "#D3D3D3"))); //H2 I2 B2 C2, D2 E2 J2 K2
+
+  //Cổng giữa
+  map.add(createGeoJsonLayer("cuaBac/data5", blockRenderer(5.8, "#D3D3D3"))); //C2 B2 Z G1, I1 U E2 D2
+  map.add(createGeoJsonLayer("cuaBac/data6", blockRenderer(1, "#D3D3D3"))); //P2 Q2 Z G1, I1 U R2 S2
+  map.add(createGeoJsonLayer("cuaBac/data7", blockRenderer(0.3, "#D3D3D3"))); //C2 B2 E2 D2
 
   //Thêm mesh Cửa Chính
   map.add(
@@ -265,7 +275,7 @@ require([
   );
   //END: 3 Mái Lớn
 
-    //START: Cửa bắc
+  //START: Cửa bắc
   //Cổng trái, phải
   map.add(createGeoJsonLayer("cuaBac/data", blockRenderer(4.5, "#D3D3D3"))); //P1 O1 N1 Q1, U1 R1 S1 T1
   map.add(createGeoJsonLayer("cuaBac/data2", blockRenderer(1, "#D3D3D3"))); //V1 W1 Z1 A2, D2 E2 F2 G2
@@ -276,6 +286,56 @@ require([
   map.add(createGeoJsonLayer("cuaBac/data5", blockRenderer(5.8, "#D3D3D3"))); //A2 Z1 L2 M2, N2 O2 E2 D2
   map.add(createGeoJsonLayer("cuaBac/data6", blockRenderer(1, "#D3D3D3"))); //P2 Q2 L2 M2, N2 O2 R2 S2
   map.add(createGeoJsonLayer("cuaBac/data7", blockRenderer(0.3, "#D3D3D3"))); //A2 Z1 E2 D2
+
+  map.add(
+    createGeoJsonLayer(
+      "cuaBac/vent1",
+      GLBRenderer({
+        href: "./meshObject/cuaBac/cuaThongGioNho.glb",
+        heading: "419",
+      })
+    )
+  );
+
+  map.add(
+    createGeoJsonLayer(
+      "cuaBac/vent2",
+      GLBRenderer({
+        href: "./meshObject/cuaBac/cuaThongGioNho.glb",
+        heading: "419",
+      })
+    )
+  );
+
+  map.add(
+    createGeoJsonLayer(
+      "cuaBac/vent3",
+      GLBRenderer({
+        href: "./meshObject/cuaBac/cuaThongGioNho.glb",
+        heading: "239.25",
+      })
+    )
+  );
+
+  map.add(
+    createGeoJsonLayer(
+      "cuaBac/vent4",
+      GLBRenderer({
+        href: "./meshObject/cuaBac/cuaThongGioNho.glb",
+        heading: "239.25",
+      })
+    )
+  );
+
+  map.add(
+    createGeoJsonLayer(
+      "cuaBac/gate",
+      GLBRenderer({
+        href: "./meshObject/cuaBac/cua.glb",
+        heading: "598",
+      })
+    )
+  );
+
   //END: Cửa Bắc
-  
 });
