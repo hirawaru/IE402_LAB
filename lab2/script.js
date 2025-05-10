@@ -124,16 +124,6 @@ require([
   map.add(createGeoJsonLayer("cuaChinh/data6", blockRenderer(1, "#D3D3D3"))); //J1 K1 U R
   map.add(createGeoJsonLayer("cuaChinh/data7", blockRenderer(0.3, "#D3D3D3"))); //L N M L'
 
-  map.add(createGeoJsonLayer("cuaBac/data", blockRenderer(4.5, "#D3D3D3"))); //P1 Q1 R1 S1, T1 U1 V1 W1
-  map.add(createGeoJsonLayer("cuaBac/data2", blockRenderer(1, "#D3D3D3"))); //Z1 A2 B2 C2, D2 E2 F2 G2
-  map.add(createGeoJsonLayer("cuaBac/data3", blockRenderer(0.3, "#D3D3D3"))); //P1 Q1 B2 C2, D2 E2 V1 W1
-  map.add(createGeoJsonLayer("cuaBac/data4", blockRenderer(4.5, "#D3D3D3"))); //H2 I2 B2 C2, D2 E2 J2 K2
-
-  //Cổng giữa
-  map.add(createGeoJsonLayer("cuaBac/data5", blockRenderer(5.8, "#D3D3D3"))); //C2 B2 Z G1, I1 U E2 D2
-  map.add(createGeoJsonLayer("cuaBac/data6", blockRenderer(1, "#D3D3D3"))); //P2 Q2 Z G1, I1 U R2 S2
-  map.add(createGeoJsonLayer("cuaBac/data7", blockRenderer(0.3, "#D3D3D3"))); //C2 B2 E2 D2
-
   //Thêm mesh Cửa Chính
   map.add(
     createGeoJsonLayer(
@@ -331,8 +321,8 @@ require([
     createGeoJsonLayer(
       "cuaBac/gate",
       GLBRenderer({
-        href: "./meshObject/cuaBac/cua.glb",
-        heading: "598",
+        href: "./meshObject/cuaBac/cuaBac.glb",
+        heading: "507.5",
       })
     )
   );
