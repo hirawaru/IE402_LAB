@@ -342,9 +342,5 @@ require([
   map.add(createGeoJsonLayer("thapDongHo/phan_tren_thanthap", blockRenderer(0.3, "#FFFEE0")));
   map.add(createGeoJsonLayer("thapDongHo/phan_than_ganmai", blockRenderer(1.5, "#FFFEE8")));
   map.add(createGeoJsonLayer("thapDongHo/mai_thap", blockRenderer(0.2, "#CC6633")));
-
-
- 
-
   
 });
