@@ -1,4 +1,4 @@
-function blockRenderer(height, color) {
+function blockRenderer(height, color, edgeColor) {
   return {
     type: "simple",
     symbol: {
@@ -10,7 +10,11 @@ function blockRenderer(height, color) {
           material: {
             color: color,
           },
-        },
+           outline: {
+            color: edgeColor,  // Màu viền
+            size: 5 // Độ dày viền
+          }
+        }          
       ],
     },
   };
@@ -329,6 +333,7 @@ require([
 
   //END: Cửa Bắc
 
+
   //START: Cửa Đông
   //Cổng trái, phải
   map.add(createGeoJsonLayer("cuaDong/data", blockRenderer(4.5, "#D3D3D3"))); //B1 W I1 L1, Q1 Z1 A2 W'
@@ -516,4 +521,13 @@ require([
     )
   );
   //END: Cửa Tây
+
+  //Start: mai dong ho
+  map.add(createGeoJsonLayer("thapDongHo/mai_noi_thap_dho", blockRenderer(0.5, "#8B0000", "#FFFEE8")));
+  map.add(createGeoJsonLayer("thapDongHo/tuong_dongho", blockRenderer(5.9, "#D3D3D3")));
+  map.add(createGeoJsonLayer("thapDongHo/tuong_tamgiactrang", blockRenderer(12, "#FFFEE8")));
+  map.add(createGeoJsonLayer("thapDongHo/than_thap", blockRenderer(16.6, "#FFFEE8")));
+  map.add(createGeoJsonLayer("thapDongHo/phan_tren_thanthap", blockRenderer(0.3, "#FFFEE0")));
+  map.add(createGeoJsonLayer("thapDongHo/phan_than_ganmai", blockRenderer(1.5, "#FFFEE8")));
+  map.add(createGeoJsonLayer("thapDongHo/mai_thap", blockRenderer(0.2, "#CC6633")));
 });
