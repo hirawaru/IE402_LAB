@@ -1495,7 +1495,7 @@ require([
       "cuaSoMaiNho/mai1",
       GLBRenderer({
         href: "./meshObject/maiNho/cuaSoMaiNho.glb",
-        heading: "508",
+        heading: "328",
       })
     )
   );
@@ -1504,7 +1504,7 @@ require([
       "cuaSoMaiNho/mai2",
       GLBRenderer({
         href: "./meshObject/maiNho/cuaSoMaiNho.glb",
-        heading: "508",
+        heading: "328",
       })
     )
   );
@@ -1513,7 +1513,7 @@ require([
       "cuaSoMaiNho/mai3",
       GLBRenderer({
         href: "./meshObject/maiNho/cuaSoMaiNho.glb",
-        heading: "508",
+        heading: "328",
       })
     )
   );
@@ -1522,7 +1522,7 @@ require([
       "cuaSoMaiNho/mai4",
       GLBRenderer({
         href: "./meshObject/maiNho/cuaSoMaiNho.glb",
-        heading: "508",
+        heading: "328",
       })
     )
   );
@@ -1531,7 +1531,7 @@ require([
       "cuaSoMaiNho/mai5",
       GLBRenderer({
         href: "./meshObject/maiNho/cuaSoMaiNho.glb",
-        heading: "508",
+        heading: "328",
       })
     )
   );
@@ -1540,7 +1540,7 @@ require([
       "cuaSoMaiNho/mai6",
       GLBRenderer({
         href: "./meshObject/maiNho/cuaSoMaiNho.glb",
-        heading: "508",
+        heading: "328",
       })
     )
   );
@@ -1549,7 +1549,7 @@ require([
       "cuaSoMaiNho/mai7",
       GLBRenderer({
         href: "./meshObject/maiNho/cuaSoMaiNho.glb",
-        heading: "328",
+        heading: "508",
       })
     )
   );
@@ -1558,7 +1558,7 @@ require([
       "cuaSoMaiNho/mai8",
       GLBRenderer({
         href: "./meshObject/maiNho/cuaSoMaiNho.glb",
-        heading: "328",
+        heading: "508",
       })
     )
   );
@@ -1567,7 +1567,7 @@ require([
       "cuaSoMaiNho/mai9",
       GLBRenderer({
         href: "./meshObject/maiNho/cuaSoMaiNho.glb",
-        heading: "328",
+        heading: "508",
       })
     )
   );
@@ -1576,7 +1576,7 @@ require([
       "cuaSoMaiNho/mai10",
       GLBRenderer({
         href: "./meshObject/maiNho/cuaSoMaiNho.glb",
-        heading: "328",
+        heading: "508",
       })
     )
   );
@@ -1585,7 +1585,7 @@ require([
       "cuaSoMaiNho/mai11",
       GLBRenderer({
         href: "./meshObject/maiNho/cuaSoMaiNho.glb",
-        heading: "328",
+        heading: "508",
       })
     )
   );
@@ -1594,7 +1594,7 @@ require([
       "cuaSoMaiNho/mai12",
       GLBRenderer({
         href: "./meshObject/maiNho/cuaSoMaiNho.glb",
-        heading: "328",
+        heading: "508",
       })
     )
   );
