@@ -1303,4 +1303,84 @@ require([
         })
       )
     );  
+  //CuaSo7
+    map.add(
+      createGeoJsonLayer(
+        "phanVienTuCuaBacDong-CuaBacTay/CuaSo68",
+        GLBRenderer({
+          href: "./meshObject/PhanVienBacDong-BacTay/CuaSo.glb",
+          heading: "59",
+        })
+      )
+    );  
+    //CuaSo7
+    map.add(
+      createGeoJsonLayer(
+        "phanVienTuCuaBacDong-CuaBacTay/CuaSo69",
+        GLBRenderer({
+          href: "./meshObject/PhanVienBacDong-BacTay/CuaSo.glb",
+          heading: "17",
+        })
+      )
+    );  
+    //CuaSo7
+    map.add(
+      createGeoJsonLayer(
+        "phanVienTuCuaBacDong-CuaBacTay/CuaSo70",
+        GLBRenderer({
+          href: "./meshObject/PhanVienBacDong-BacTay/CuaSo.glb",
+          heading: "-32",
+        })
+      )
+    );  
+    //CuaSo7
+    map.add(
+      createGeoJsonLayer(
+        "phanVienTuCuaBacDong-CuaBacTay/CuaSo71",
+        GLBRenderer({
+          href: "./meshObject/PhanVienBacDong-BacTay/CuaSo.glb",
+          heading: "-32",
+        })
+      )
+    );  
+    //CuaSo7
+    map.add(
+      createGeoJsonLayer(
+        "phanVienTuCuaBacDong-CuaBacTay/CuaSo72",
+        GLBRenderer({
+          href: "./meshObject/PhanVienBacDong-BacTay/CuaSo.glb",
+          heading: "239",
+        })
+      )
+    );  
+    //CuaSo7
+    map.add(
+      createGeoJsonLayer(
+        "phanVienTuCuaBacDong-CuaBacTay/CuaSo73",
+        GLBRenderer({
+          href: "./meshObject/PhanVienBacDong-BacTay/CuaSo.glb",
+          heading: "294",
+        })
+      )
+    );  
+    //CuaSo7
+    map.add(
+      createGeoJsonLayer(
+        "phanVienTuCuaBacDong-CuaBacTay/CuaSo74",
+        GLBRenderer({
+          href: "./meshObject/PhanVienBacDong-BacTay/CuaSo.glb",
+          heading: "-32",
+        })
+      )
+    );  
+    //CuaSo7
+    map.add(
+      createGeoJsonLayer(
+        "phanVienTuCuaBacDong-CuaBacTay/CuaSo75",
+        GLBRenderer({
+          href: "./meshObject/PhanVienBacDong-BacTay/CuaSo.glb",
+          heading: "-32",
+        })
+      )
+    ); 
 });
