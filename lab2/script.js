@@ -285,8 +285,8 @@ require([
     createGeoJsonLayer(
       "cuaBac/vent1",
       GLBRenderer({
-        href: "./meshObject/cuaBac/cuaThongGioNho.glb",
-        heading: "419",
+        href: "./meshObject/cuaBac/cuaThongGio.glb",
+        heading: "239",
       })
     )
   );
@@ -295,8 +295,8 @@ require([
     createGeoJsonLayer(
       "cuaBac/vent2",
       GLBRenderer({
-        href: "./meshObject/cuaBac/cuaThongGioNho.glb",
-        heading: "419",
+        href: "./meshObject/cuaBac/cuaThongGio.glb",
+        heading: "239",
       })
     )
   );
@@ -305,8 +305,8 @@ require([
     createGeoJsonLayer(
       "cuaBac/vent3",
       GLBRenderer({
-        href: "./meshObject/cuaBac/cuaThongGioNho.glb",
-        heading: "239.25",
+        href: "./meshObject/cuaBac/cuaThongGio.glb",
+        heading: "59",
       })
     )
   );
@@ -315,8 +315,8 @@ require([
     createGeoJsonLayer(
       "cuaBac/vent4",
       GLBRenderer({
-        href: "./meshObject/cuaBac/cuaThongGioNho.glb",
-        heading: "239.25",
+        href: "./meshObject/cuaBac/cuaThongGio.glb",
+        heading: "59",
       })
     )
   );
@@ -348,40 +348,10 @@ require([
   //Thêm mesh Cửa Đông
   map.add(
     createGeoJsonLayer(
-      "cuaDong/middleGate",
-      GLBRenderer({
-        href: "./meshObject/cuaDong/cuaGiua.glb",
-        heading: "328",
-      })
-    )
-  );
-
-  map.add(
-    createGeoJsonLayer(
-      "cuaDong/rightGate",
-      GLBRenderer({
-        href: "./meshObject/cuaDong/cuaPhai.glb",
-        heading: "328",
-      })
-    )
-  );
-
-  map.add(
-    createGeoJsonLayer(
-      "cuaDong/leftGate",
-      GLBRenderer({
-        href: "./meshObject/cuaDong/cuaTrai.glb",
-        heading: "328",
-      })
-    )
-  );
-
-  map.add(
-    createGeoJsonLayer(
       "cuaDong/vent1",
       GLBRenderer({
         href: "./meshObject/cuaDong/cuaThongGio.glb",
-        heading: "419",
+        heading: "329",
       })
     )
   );
@@ -391,7 +361,7 @@ require([
       "cuaDong/vent2",
       GLBRenderer({
         href: "./meshObject/cuaDong/cuaThongGio.glb",
-        heading: "419",
+        heading: "329",
       })
     )
   );
@@ -401,7 +371,7 @@ require([
       "cuaDong/vent3",
       GLBRenderer({
         href: "./meshObject/cuaDong/cuaThongGio.glb",
-        heading: "239.25",
+        heading: "149",
       })
     )
   );
@@ -411,17 +381,17 @@ require([
       "cuaDong/vent4",
       GLBRenderer({
         href: "./meshObject/cuaDong/cuaThongGio.glb",
-        heading: "239.25",
+        heading: "149",
       })
     )
   );
 
   map.add(
     createGeoJsonLayer(
-      "cuaDong/nameBoard",
+      "cuaDong/gate",
       GLBRenderer({
-        href: "./meshObject/cuaDong/bangTen.glb",
-        heading: "328",
+        href: "./meshObject/cuaDong/cuaDong.glb",
+        heading: "329",
       })
     )
   );
@@ -442,40 +412,10 @@ require([
   //Thêm mesh Cửa Tây
   map.add(
     createGeoJsonLayer(
-      "cuaTay/middleGate",
-      GLBRenderer({
-        href: "./meshObject/cuaTay/cuaGiua.glb",
-        heading: "328",
-      })
-    )
-  );
-
-  map.add(
-    createGeoJsonLayer(
-      "cuaTay/rightGate",
-      GLBRenderer({
-        href: "./meshObject/cuaTay/cuaPhai.glb",
-        heading: "328",
-      })
-    )
-  );
-
-  map.add(
-    createGeoJsonLayer(
-      "cuaTay/leftGate",
-      GLBRenderer({
-        href: "./meshObject/cuaTay/cuaTrai.glb",
-        heading: "328",
-      })
-    )
-  );
-
-  map.add(
-    createGeoJsonLayer(
       "cuaTay/vent1",
       GLBRenderer({
         href: "./meshObject/cuaTay/cuaThongGio.glb",
-        heading: "419",
+        heading: "508",
       })
     )
   );
@@ -485,7 +425,7 @@ require([
       "cuaTay/vent2",
       GLBRenderer({
         href: "./meshObject/cuaTay/cuaThongGio.glb",
-        heading: "419",
+        heading: "508",
       })
     )
   );
@@ -495,7 +435,7 @@ require([
       "cuaTay/vent3",
       GLBRenderer({
         href: "./meshObject/cuaTay/cuaThongGio.glb",
-        heading: "239.25",
+        heading: "328",
       })
     )
   );
@@ -505,17 +445,65 @@ require([
       "cuaTay/vent4",
       GLBRenderer({
         href: "./meshObject/cuaTay/cuaThongGio.glb",
-        heading: "239.25",
+        heading: "328",
       })
     )
   );
 
   map.add(
     createGeoJsonLayer(
-      "cuaTay/nameBoard",
+      "cuaTay/gate",
       GLBRenderer({
-        href: "./meshObject/cuaTay/bangTen.glb",
-        heading: "328",
+        href: "./meshObject/cuaTay/cuaTay.glb",
+        heading: "329",
+      })
+    )
+  );
+  //END: Cửa Tây
+
+  //Start: mai dong ho
+  map.add(createGeoJsonLayer("thapDongHo/mai_noi_thap_dho", blockRenderer(0.5, "#8B0000", "#FFFEE8")));
+  map.add(createGeoJsonLayer("thapDongHo/tuong_dongho", blockRenderer(5.9, "#D3D3D3")));
+  map.add(createGeoJsonLayer("thapDongHo/tuong_tamgiactrang", blockRenderer(12, "#FFFEE8")));
+  map.add(createGeoJsonLayer("thapDongHo/than_thap", blockRenderer(16.6, "#FFFEE8")));
+  map.add(createGeoJsonLayer("thapDongHo/phan_tren_thanthap", blockRenderer(0.3, "#FFFEE0")));
+  map.add(createGeoJsonLayer("thapDongHo/phan_than_ganmai", blockRenderer(1.5, "#FFFEE8")));
+  map.add(createGeoJsonLayer("thapDongHo/mai_thap", blockRenderer(0.2, "#CC6633")));
+
+      //START: Phần viền ngoài từ cửa Bắc - Đông, Bắc - Tây
+  //2HCN nho len
+  map.add(createGeoJsonLayer("phanVienTuCuaBacDong-CuaBacTay/2HCN_NhoLen", blockRenderer(1.9, "#D3D3D3"))); 
+  map.add(createGeoJsonLayer("phanVienTuCuaBacDong-CuaBacTay/2HCN_ChuaTron", blockRenderer(1.05, "#D3D3D3"))); 
+  map.add(createGeoJsonLayer("phanVienTuCuaBacDong-CuaBacTay/2HCN_ChuaTron_GanCuaBac", blockRenderer(1.05, "#D3D3D3"))); 
+  map.add(createGeoJsonLayer("phanVienTuCuaBacDong-CuaBacTay/2HCNnho_NoiVoiCuaBac", blockRenderer(1.05, "#D3D3D3"))); 
+
+  //CuaSo1
+  map.add(
+    createGeoJsonLayer(
+      "phanVienTuCuaBacDong-CuaBacTay/CuaSo1",
+      GLBRenderer({
+        href: "./meshObject/PhanVienBacDong-BacTay/CuaSo.glb",
+        heading: "59",
+      })
+    )
+  );
+  //CuaSo2
+  map.add(
+    createGeoJsonLayer(
+      "phanVienTuCuaBacDong-CuaBacTay/CuaSo2",
+      GLBRenderer({
+        href: "./meshObject/PhanVienBacDong-BacTay/CuaSo.glb",
+        heading: "59",
+      })
+    )
+  );
+  //CuaSo3
+  map.add(
+    createGeoJsonLayer(
+      "phanVienTuCuaBacDong-CuaBacTay/CuaSo3",
+      GLBRenderer({
+        href: "./meshObject/PhanVienBacDong-BacTay/CuaSo.glb",
+        heading: "59",
       })
     )
   );
@@ -664,38 +652,655 @@ require([
   ); //O K' D1 S
   //End chinh dong
 
-  //Start: mai dong ho
+
+  //CuaSo4
   map.add(
     createGeoJsonLayer(
-      "thapDongHo/mai_noi_thap_dho",
-      blockRenderer(0.5, "#8B0000", "#FFFEE8")
+      "phanVienTuCuaBacDong-CuaBacTay/CuaSo4",
+      GLBRenderer({
+        href: "./meshObject/PhanVienBacDong-BacTay/CuaSo.glb",
+        heading: "59",
+      })
     )
   );
-  map.add(
-    createGeoJsonLayer("thapDongHo/tuong_dongho", blockRenderer(5.9, "#D3D3D3"))
-  );
+  //CuaSo5
   map.add(
     createGeoJsonLayer(
-      "thapDongHo/tuong_tamgiactrang",
-      blockRenderer(12, "#FFFEE8")
+      "phanVienTuCuaBacDong-CuaBacTay/CuaSo5",
+      GLBRenderer({
+        href: "./meshObject/PhanVienBacDong-BacTay/CuaSo.glb",
+        heading: "59",
+      })
     )
   );
-  map.add(
-    createGeoJsonLayer("thapDongHo/than_thap", blockRenderer(16.6, "#FFFEE8"))
-  );
+  //CuaSo6
   map.add(
     createGeoJsonLayer(
-      "thapDongHo/phan_tren_thanthap",
-      blockRenderer(0.3, "#FFFEE0")
+      "phanVienTuCuaBacDong-CuaBacTay/CuaSo6",
+      GLBRenderer({
+        href: "./meshObject/PhanVienBacDong-BacTay/CuaSo.glb",
+        heading: "59",
+      })
     )
   );
+  //CuaSo7
   map.add(
     createGeoJsonLayer(
-      "thapDongHo/phan_than_ganmai",
-      blockRenderer(1.5, "#FFFEE8")
+      "phanVienTuCuaBacDong-CuaBacTay/CuaSo7",
+      GLBRenderer({
+        href: "./meshObject/PhanVienBacDong-BacTay/CuaSo.glb",
+        heading: "59",
+      })
     )
   );
+  //CuaSo7
   map.add(
-    createGeoJsonLayer("thapDongHo/mai_thap", blockRenderer(0.2, "#CC6633"))
+    createGeoJsonLayer(
+      "phanVienTuCuaBacDong-CuaBacTay/CuaSo8",
+      GLBRenderer({
+        href: "./meshObject/PhanVienBacDong-BacTay/CuaSo.glb",
+        heading: "59",
+      })
+    )
   );
+  //CuaSo7
+  map.add(
+    createGeoJsonLayer(
+      "phanVienTuCuaBacDong-CuaBacTay/CuaSo9",
+      GLBRenderer({
+        href: "./meshObject/PhanVienBacDong-BacTay/CuaSo.glb",
+        heading: "59",
+      })
+    )
+  );
+  //CuaSo7
+  map.add(
+    createGeoJsonLayer(
+      "phanVienTuCuaBacDong-CuaBacTay/CuaSo10",
+      GLBRenderer({
+        href: "./meshObject/PhanVienBacDong-BacTay/CuaSo.glb",
+        heading: "59",
+      })
+    )
+  );
+  //CuaSo7
+  map.add(
+    createGeoJsonLayer(
+      "phanVienTuCuaBacDong-CuaBacTay/CuaSo11",
+      GLBRenderer({
+        href: "./meshObject/PhanVienBacDong-BacTay/CuaSo.glb",
+        heading: "59",
+      })
+    )
+  );
+  //CuaSo7
+  map.add(
+    createGeoJsonLayer(
+      "phanVienTuCuaBacDong-CuaBacTay/CuaSo12",
+      GLBRenderer({
+        href: "./meshObject/PhanVienBacDong-BacTay/CuaSo.glb",
+        heading: "59",
+      })
+    )
+  );
+  //CuaSo7
+  map.add(
+    createGeoJsonLayer(
+      "phanVienTuCuaBacDong-CuaBacTay/CuaSo13",
+      GLBRenderer({
+        href: "./meshObject/PhanVienBacDong-BacTay/CuaSo.glb",
+        heading: "59",
+      })
+    )
+  );
+  //CuaSo7
+  map.add(
+    createGeoJsonLayer(
+      "phanVienTuCuaBacDong-CuaBacTay/CuaSo14",
+      GLBRenderer({
+        href: "./meshObject/PhanVienBacDong-BacTay/CuaSo.glb",
+        heading: "59",
+      })
+    )
+  );
+  //CuaSo7
+  map.add(
+    createGeoJsonLayer(
+      "phanVienTuCuaBacDong-CuaBacTay/CuaSo15",
+      GLBRenderer({
+        href: "./meshObject/PhanVienBacDong-BacTay/CuaSo.glb",
+        heading: "59",
+      })
+    )
+  );
+  //CuaSo7
+  map.add(
+    createGeoJsonLayer(
+      "phanVienTuCuaBacDong-CuaBacTay/CuaSo16",
+      GLBRenderer({
+        href: "./meshObject/PhanVienBacDong-BacTay/CuaSo.glb",
+        heading: "59",
+      })
+    )
+  );
+  //CuaSo7
+  map.add(
+    createGeoJsonLayer(
+      "phanVienTuCuaBacDong-CuaBacTay/CuaSo17",
+      GLBRenderer({
+        href: "./meshObject/PhanVienBacDong-BacTay/CuaSo.glb",
+        heading: "59",
+      })
+    )
+  );
+  //CuaSo7
+  map.add(
+    createGeoJsonLayer(
+      "phanVienTuCuaBacDong-CuaBacTay/CuaSo18",
+      GLBRenderer({
+        href: "./meshObject/PhanVienBacDong-BacTay/CuaSo.glb",
+        heading: "59",
+      })
+    )
+  );
+  //CuaSo7
+  map.add(
+    createGeoJsonLayer(
+      "phanVienTuCuaBacDong-CuaBacTay/CuaSo19",
+      GLBRenderer({
+        href: "./meshObject/PhanVienBacDong-BacTay/CuaSo.glb",
+        heading: "59",
+      })
+    )
+  );
+  //CuaSo7
+  map.add(
+    createGeoJsonLayer(
+      "phanVienTuCuaBacDong-CuaBacTay/CuaSo20",
+      GLBRenderer({
+        href: "./meshObject/PhanVienBacDong-BacTay/CuaSo.glb",
+        heading: "59",
+      })
+    )
+  );
+  //CuaSo7
+  map.add(
+    createGeoJsonLayer(
+      "phanVienTuCuaBacDong-CuaBacTay/CuaSo21",
+      GLBRenderer({
+        href: "./meshObject/PhanVienBacDong-BacTay/CuaSo.glb",
+        heading: "59",
+      })
+    )
+  );
+//CuaSo7
+  map.add(
+    createGeoJsonLayer(
+      "phanVienTuCuaBacDong-CuaBacTay/CuaSo21",
+      GLBRenderer({
+        href: "./meshObject/PhanVienBacDong-BacTay/CuaSo.glb",
+        heading: "59",
+      })
+    )
+  );
+  //CuaSo7
+  map.add(
+    createGeoJsonLayer(
+      "phanVienTuCuaBacDong-CuaBacTay/CuaSo22",
+      GLBRenderer({
+        href: "./meshObject/PhanVienBacDong-BacTay/CuaSo.glb",
+        heading: "-32",
+      })
+    )
+  );
+  //CuaSo7
+  map.add(
+    createGeoJsonLayer(
+      "phanVienTuCuaBacDong-CuaBacTay/CuaSo23",
+      GLBRenderer({
+        href: "./meshObject/PhanVienBacDong-BacTay/CuaSo.glb",
+        heading: "-32",
+      })
+    )
+  );
+  //CuaSo7
+  map.add(
+    createGeoJsonLayer(
+      "phanVienTuCuaBacDong-CuaBacTay/CuaSo24",
+      GLBRenderer({
+        href: "./meshObject/PhanVienBacDong-BacTay/CuaSo.glb",
+        heading: "-32",
+      })
+    )
+  );
+  //CuaSo7
+  map.add(
+    createGeoJsonLayer(
+      "phanVienTuCuaBacDong-CuaBacTay/CuaSo25",
+      GLBRenderer({
+        href: "./meshObject/PhanVienBacDong-BacTay/CuaSo.glb",
+        heading: "-32",
+      })
+    )
+  );
+  //CuaSo7
+  map.add(
+    createGeoJsonLayer(
+      "phanVienTuCuaBacDong-CuaBacTay/CuaSo26",
+      GLBRenderer({
+        href: "./meshObject/PhanVienBacDong-BacTay/CuaSo.glb",
+        heading: "-32",
+      })
+    )
+  );
+  //CuaSo7
+  map.add(
+    createGeoJsonLayer(
+      "phanVienTuCuaBacDong-CuaBacTay/CuaSo27",
+      GLBRenderer({
+        href: "./meshObject/PhanVienBacDong-BacTay/CuaSo.glb",
+        heading: "-32",
+      })
+    )
+  );
+  //CuaSo7
+  map.add(
+    createGeoJsonLayer(
+      "phanVienTuCuaBacDong-CuaBacTay/CuaSo28",
+      GLBRenderer({
+        href: "./meshObject/PhanVienBacDong-BacTay/CuaSo.glb",
+        heading: "-32",
+      })
+    )
+  );
+  //CuaSo7
+  map.add(
+    createGeoJsonLayer(
+      "phanVienTuCuaBacDong-CuaBacTay/CuaSo29",
+      GLBRenderer({
+        href: "./meshObject/PhanVienBacDong-BacTay/CuaSo.glb",
+        heading: "-32",
+      })
+    )
+  );
+    //CuaSo7
+    map.add(
+      createGeoJsonLayer(
+        "phanVienTuCuaBacDong-CuaBacTay/CuaSo30",
+        GLBRenderer({
+          href: "./meshObject/PhanVienBacDong-BacTay/CuaSo.glb",
+          heading: "-32",
+        })
+      )
+    );
+      //CuaSo7
+  map.add(
+    createGeoJsonLayer(
+      "phanVienTuCuaBacDong-CuaBacTay/CuaSo31",
+      GLBRenderer({
+        href: "./meshObject/PhanVienBacDong-BacTay/CuaSo.glb",
+        heading: "-32",
+      })
+    )
+  );
+    //CuaSo7
+    map.add(
+      createGeoJsonLayer(
+        "phanVienTuCuaBacDong-CuaBacTay/CuaSo32",
+        GLBRenderer({
+          href: "./meshObject/PhanVienBacDong-BacTay/CuaSo.glb",
+          heading: "-32",
+        })
+      )
+    );
+      //CuaSo7
+  map.add(
+    createGeoJsonLayer(
+      "phanVienTuCuaBacDong-CuaBacTay/CuaSo33",
+      GLBRenderer({
+        href: "./meshObject/PhanVienBacDong-BacTay/CuaSo.glb",
+        heading: "-32",
+      })
+    )
+  );
+    //CuaSo7
+    map.add(
+      createGeoJsonLayer(
+        "phanVienTuCuaBacDong-CuaBacTay/CuaSo34",
+        GLBRenderer({
+          href: "./meshObject/PhanVienBacDong-BacTay/CuaSo.glb",
+          heading: "-32",
+        })
+      )
+    );
+    //CuaSo7
+    map.add(
+      createGeoJsonLayer(
+        "phanVienTuCuaBacDong-CuaBacTay/CuaSo35",
+        GLBRenderer({
+          href: "./meshObject/PhanVienBacDong-BacTay/CuaSo.glb",
+          heading: "-32",
+        })
+      )
+    );
+    //CuaSo7
+    map.add(
+      createGeoJsonLayer(
+        "phanVienTuCuaBacDong-CuaBacTay/CuaSo36",
+        GLBRenderer({
+          href: "./meshObject/PhanVienBacDong-BacTay/CuaSo.glb",
+          heading: "-32",
+        })
+      )
+    );
+    //CuaSo7
+    map.add(
+      createGeoJsonLayer(
+        "phanVienTuCuaBacDong-CuaBacTay/CuaSo37",
+        GLBRenderer({
+          href: "./meshObject/PhanVienBacDong-BacTay/CuaSo.glb",
+          heading: "-32",
+        })
+      )
+    );
+    //CuaSo7
+    map.add(
+      createGeoJsonLayer(
+        "phanVienTuCuaBacDong-CuaBacTay/CuaSo38",
+        GLBRenderer({
+          href: "./meshObject/PhanVienBacDong-BacTay/CuaSo.glb",
+          heading: "-32",
+        })
+      )
+    );
+    //CuaSo7
+    map.add(
+      createGeoJsonLayer(
+        "phanVienTuCuaBacDong-CuaBacTay/CuaSo39",
+        GLBRenderer({
+          href: "./meshObject/PhanVienBacDong-BacTay/CuaSo.glb",
+          heading: "-32",
+        })
+      )
+    );
+    //CuaSo7
+    map.add(
+      createGeoJsonLayer(
+        "phanVienTuCuaBacDong-CuaBacTay/CuaSo40",
+        GLBRenderer({
+          href: "./meshObject/PhanVienBacDong-BacTay/CuaSo.glb",
+          heading: "-32",
+        })
+      )
+    );
+    //CuaSo7
+    map.add(
+      createGeoJsonLayer(
+        "phanVienTuCuaBacDong-CuaBacTay/CuaSo41",
+        GLBRenderer({
+          href: "./meshObject/PhanVienBacDong-BacTay/CuaSo.glb",
+          heading: "-32",
+        })
+      )
+    );
+    //CuaSo7
+    map.add(
+      createGeoJsonLayer(
+        "phanVienTuCuaBacDong-CuaBacTay/CuaSo42",
+        GLBRenderer({
+          href: "./meshObject/PhanVienBacDong-BacTay/CuaSo.glb",
+          heading: "-32",
+        })
+      )
+    );
+    //CuaSo7
+    map.add(
+      createGeoJsonLayer(
+        "phanVienTuCuaBacDong-CuaBacTay/CuaSo43",
+        GLBRenderer({
+          href: "./meshObject/PhanVienBacDong-BacTay/CuaSo.glb",
+          heading: "-32",
+        })
+      )
+    );
+    //CuaSo7
+    map.add(
+      createGeoJsonLayer(
+        "phanVienTuCuaBacDong-CuaBacTay/CuaSo44",
+        GLBRenderer({
+          href: "./meshObject/PhanVienBacDong-BacTay/CuaSo.glb",
+          heading: "-32",
+        })
+      )
+    );
+    //CuaSo7
+    map.add(
+      createGeoJsonLayer(
+        "phanVienTuCuaBacDong-CuaBacTay/CuaSo45",
+        GLBRenderer({
+          href: "./meshObject/PhanVienBacDong-BacTay/CuaSo.glb",
+          heading: "-32",
+        })
+      )
+    );
+    //CuaSo7
+    map.add(
+      createGeoJsonLayer(
+        "phanVienTuCuaBacDong-CuaBacTay/CuaSo46",
+        GLBRenderer({
+          href: "./meshObject/PhanVienBacDong-BacTay/CuaSo.glb",
+          heading: "-32",
+        })
+      )
+    );
+    //CuaSo7
+    map.add(
+      createGeoJsonLayer(
+        "phanVienTuCuaBacDong-CuaBacTay/CuaSo47",
+        GLBRenderer({
+          href: "./meshObject/PhanVienBacDong-BacTay/CuaSo.glb",
+          heading: "-32",
+        })
+      )
+    );
+    //CuaSo7
+    map.add(
+      createGeoJsonLayer(
+        "phanVienTuCuaBacDong-CuaBacTay/CuaSo48",
+        GLBRenderer({
+          href: "./meshObject/PhanVienBacDong-BacTay/CuaSo.glb",
+          heading: "239",
+        })
+      )
+    );  
+    //CuaSo7
+    map.add(
+      createGeoJsonLayer(
+        "phanVienTuCuaBacDong-CuaBacTay/CuaSo49",
+        GLBRenderer({
+          href: "./meshObject/PhanVienBacDong-BacTay/CuaSo.glb",
+          heading: "239",
+        })
+      )
+    ); 
+    //CuaSo7
+    map.add(
+      createGeoJsonLayer(
+        "phanVienTuCuaBacDong-CuaBacTay/CuaSo50",
+        GLBRenderer({
+          href: "./meshObject/PhanVienBacDong-BacTay/CuaSo.glb",
+          heading: "239",
+        })
+      )
+    );
+    //CuaSo7
+    map.add(
+      createGeoJsonLayer(
+        "phanVienTuCuaBacDong-CuaBacTay/CuaSo51",
+        GLBRenderer({
+          href: "./meshObject/PhanVienBacDong-BacTay/CuaSo.glb",
+          heading: "239",
+        })
+      )
+    ); 
+    //CuaSo7
+    map.add(
+      createGeoJsonLayer(
+        "phanVienTuCuaBacDong-CuaBacTay/CuaSo52",
+        GLBRenderer({
+          href: "./meshObject/PhanVienBacDong-BacTay/CuaSo.glb",
+          heading: "239",
+        })
+      )
+    ); 
+    //CuaSo7
+    map.add(
+      createGeoJsonLayer(
+        "phanVienTuCuaBacDong-CuaBacTay/CuaSo53",
+        GLBRenderer({
+          href: "./meshObject/PhanVienBacDong-BacTay/CuaSo.glb",
+          heading: "239",
+        })
+      )
+    ); 
+    //CuaSo7
+    map.add(
+      createGeoJsonLayer(
+        "phanVienTuCuaBacDong-CuaBacTay/CuaSo54",
+        GLBRenderer({
+          href: "./meshObject/PhanVienBacDong-BacTay/CuaSo.glb",
+          heading: "239",
+        })
+      )
+    );  
+    //CuaSo7
+    map.add(
+      createGeoJsonLayer(
+        "phanVienTuCuaBacDong-CuaBacTay/CuaSo55",
+        GLBRenderer({
+          href: "./meshObject/PhanVienBacDong-BacTay/CuaSo.glb",
+          heading: "239",
+        })
+      )
+    );  
+    //CuaSo7
+    map.add(
+      createGeoJsonLayer(
+        "phanVienTuCuaBacDong-CuaBacTay/CuaSo56",
+        GLBRenderer({
+          href: "./meshObject/PhanVienBacDong-BacTay/CuaSo.glb",
+          heading: "239",
+        })
+      )
+    );  
+    //CuaSo7
+    map.add(
+      createGeoJsonLayer(
+        "phanVienTuCuaBacDong-CuaBacTay/CuaSo57",
+        GLBRenderer({
+          href: "./meshObject/PhanVienBacDong-BacTay/CuaSo.glb",
+          heading: "239",
+        })
+      )
+    );  
+    //CuaSo7
+    map.add(
+      createGeoJsonLayer(
+        "phanVienTuCuaBacDong-CuaBacTay/CuaSo58",
+        GLBRenderer({
+          href: "./meshObject/PhanVienBacDong-BacTay/CuaSo.glb",
+          heading: "239",
+        })
+      )
+    );  
+    //CuaSo7
+    map.add(
+      createGeoJsonLayer(
+        "phanVienTuCuaBacDong-CuaBacTay/CuaSo59",
+        GLBRenderer({
+          href: "./meshObject/PhanVienBacDong-BacTay/CuaSo.glb",
+          heading: "239",
+        })
+      )
+    );  
+    //CuaSo7
+    map.add(
+      createGeoJsonLayer(
+        "phanVienTuCuaBacDong-CuaBacTay/CuaSo60",
+        GLBRenderer({
+          href: "./meshObject/PhanVienBacDong-BacTay/CuaSo.glb",
+          heading: "239",
+        })
+      )
+    );  
+    //CuaSo7
+    map.add(
+      createGeoJsonLayer(
+        "phanVienTuCuaBacDong-CuaBacTay/CuaSo61",
+        GLBRenderer({
+          href: "./meshObject/PhanVienBacDong-BacTay/CuaSo.glb",
+          heading: "239",
+        })
+      )
+    );  
+    //CuaSo7
+    map.add(
+      createGeoJsonLayer(
+        "phanVienTuCuaBacDong-CuaBacTay/CuaSo62",
+        GLBRenderer({
+          href: "./meshObject/PhanVienBacDong-BacTay/CuaSo.glb",
+          heading: "239",
+        })
+      )
+    );  
+    //CuaSo7
+    map.add(
+      createGeoJsonLayer(
+        "phanVienTuCuaBacDong-CuaBacTay/CuaSo63",
+        GLBRenderer({
+          href: "./meshObject/PhanVienBacDong-BacTay/CuaSo.glb",
+          heading: "239",
+        })
+      )
+    );  
+    //CuaSo7
+    map.add(
+      createGeoJsonLayer(
+        "phanVienTuCuaBacDong-CuaBacTay/CuaSo64",
+        GLBRenderer({
+          href: "./meshObject/PhanVienBacDong-BacTay/CuaSo.glb",
+          heading: "239",
+        })
+      )
+    );  
+    //CuaSo7
+    map.add(
+      createGeoJsonLayer(
+        "phanVienTuCuaBacDong-CuaBacTay/CuaSo65",
+        GLBRenderer({
+          href: "./meshObject/PhanVienBacDong-BacTay/CuaSo.glb",
+          heading: "239",
+        })
+      )
+    );  
+    //CuaSo7
+    map.add(
+      createGeoJsonLayer(
+        "phanVienTuCuaBacDong-CuaBacTay/CuaSo66",
+        GLBRenderer({
+          href: "./meshObject/PhanVienBacDong-BacTay/CuaSo.glb",
+          heading: "239",
+        })
+      )
+    );  
+    //CuaSo7
+    map.add(
+      createGeoJsonLayer(
+        "phanVienTuCuaBacDong-CuaBacTay/CuaSo67",
+        GLBRenderer({
+          href: "./meshObject/PhanVienBacDong-BacTay/CuaSo.glb",
+          heading: "239",
+        })
+      )
+    );  
 });
