@@ -1482,4 +1482,114 @@ require([
       })
     )
   );
+
+
+  map.add(
+    createGeoJsonLayer(
+      "cuaSoMaiNho/mai1",
+      GLBRenderer({
+        href: "./meshObject/maiNho/cuaSoMaiNho.glb",
+        heading: "328",
+      })
+    )
+  );
+  map.add(
+    createGeoJsonLayer(
+      "cuaSoMaiNho/mai2",
+      GLBRenderer({
+        href: "./meshObject/maiNho/cuaSoMaiNho.glb",
+        heading: "328",
+      })
+    )
+  );
+  map.add(
+    createGeoJsonLayer(
+      "cuaSoMaiNho/mai3",
+      GLBRenderer({
+        href: "./meshObject/maiNho/cuaSoMaiNho.glb",
+        heading: "328",
+      })
+    )
+  );
+  map.add(
+    createGeoJsonLayer(
+      "cuaSoMaiNho/mai4",
+      GLBRenderer({
+        href: "./meshObject/maiNho/cuaSoMaiNho.glb",
+        heading: "328",
+      })
+    )
+  );
+  map.add(
+    createGeoJsonLayer(
+      "cuaSoMaiNho/mai5",
+      GLBRenderer({
+        href: "./meshObject/maiNho/cuaSoMaiNho.glb",
+        heading: "328",
+      })
+    )
+  );
+  map.add(
+    createGeoJsonLayer(
+      "cuaSoMaiNho/mai6",
+      GLBRenderer({
+        href: "./meshObject/maiNho/cuaSoMaiNho.glb",
+        heading: "328",
+      })
+    )
+  );
+  map.add(
+    createGeoJsonLayer(
+      "cuaSoMaiNho/mai7",
+      GLBRenderer({
+        href: "./meshObject/maiNho/cuaSoMaiNho.glb",
+        heading: "508",
+      })
+    )
+  );
+  map.add(
+    createGeoJsonLayer(
+      "cuaSoMaiNho/mai8",
+      GLBRenderer({
+        href: "./meshObject/maiNho/cuaSoMaiNho.glb",
+        heading: "508",
+      })
+    )
+  );
+  map.add(
+    createGeoJsonLayer(
+      "cuaSoMaiNho/mai9",
+      GLBRenderer({
+        href: "./meshObject/maiNho/cuaSoMaiNho.glb",
+        heading: "508",
+      })
+    )
+  );
+  map.add(
+    createGeoJsonLayer(
+      "cuaSoMaiNho/mai10",
+      GLBRenderer({
+        href: "./meshObject/maiNho/cuaSoMaiNho.glb",
+        heading: "508",
+      })
+    )
+  );
+  map.add(
+    createGeoJsonLayer(
+      "cuaSoMaiNho/mai11",
+      GLBRenderer({
+        href: "./meshObject/maiNho/cuaSoMaiNho.glb",
+        heading: "508",
+      })
+    )
+  );
+  map.add(
+    createGeoJsonLayer(
+      "cuaSoMaiNho/mai12",
+      GLBRenderer({
+        href: "./meshObject/maiNho/cuaSoMaiNho.glb",
+        heading: "508",
+      })
+    )
+  );
 });
