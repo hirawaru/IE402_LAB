@@ -370,10 +370,10 @@ require([
     createGeoJsonLayer("mainho/Bac_tuong_lon", blockRenderer(2, "#D3D3D3"))
   );
   map.add(
-    createGeoJsonLayer("mainho/Bac_tuong_vuong", blockRenderer(2, "#D3D3D3")));
- 
+    createGeoJsonLayer("mainho/Bac_tuong_vuong", blockRenderer(2, "#D3D3D3"))
+  );
+
   map.add(
-  
     createGeoJsonLayer(
       "cuaDong/vent3",
       GLBRenderer({
@@ -381,9 +381,7 @@ require([
         heading: "149",
       })
     )
-    );
-
-  
+  );
 
   map.add(
     createGeoJsonLayer(
@@ -1492,13 +1490,12 @@ require([
     )
   );
 
-
   map.add(
     createGeoJsonLayer(
       "cuaSoMaiNho/mai1",
       GLBRenderer({
         href: "./meshObject/maiNho/cuaSoMaiNho.glb",
-        heading: "328",
+        heading: "508",
       })
     )
   );
@@ -1507,7 +1504,7 @@ require([
       "cuaSoMaiNho/mai2",
       GLBRenderer({
         href: "./meshObject/maiNho/cuaSoMaiNho.glb",
-        heading: "328",
+        heading: "508",
       })
     )
   );
@@ -1516,7 +1513,7 @@ require([
       "cuaSoMaiNho/mai3",
       GLBRenderer({
         href: "./meshObject/maiNho/cuaSoMaiNho.glb",
-        heading: "328",
+        heading: "508",
       })
     )
   );
@@ -1525,7 +1522,7 @@ require([
       "cuaSoMaiNho/mai4",
       GLBRenderer({
         href: "./meshObject/maiNho/cuaSoMaiNho.glb",
-        heading: "328",
+        heading: "508",
       })
     )
   );
@@ -1534,7 +1531,7 @@ require([
       "cuaSoMaiNho/mai5",
       GLBRenderer({
         href: "./meshObject/maiNho/cuaSoMaiNho.glb",
-        heading: "328",
+        heading: "508",
       })
     )
   );
@@ -1543,7 +1540,7 @@ require([
       "cuaSoMaiNho/mai6",
       GLBRenderer({
         href: "./meshObject/maiNho/cuaSoMaiNho.glb",
-        heading: "328",
+        heading: "508",
       })
     )
   );
@@ -1552,7 +1549,7 @@ require([
       "cuaSoMaiNho/mai7",
       GLBRenderer({
         href: "./meshObject/maiNho/cuaSoMaiNho.glb",
-        heading: "508",
+        heading: "328",
       })
     )
   );
@@ -1561,7 +1558,7 @@ require([
       "cuaSoMaiNho/mai8",
       GLBRenderer({
         href: "./meshObject/maiNho/cuaSoMaiNho.glb",
-        heading: "508",
+        heading: "328",
       })
     )
   );
@@ -1570,7 +1567,7 @@ require([
       "cuaSoMaiNho/mai9",
       GLBRenderer({
         href: "./meshObject/maiNho/cuaSoMaiNho.glb",
-        heading: "508",
+        heading: "328",
       })
     )
   );
@@ -1579,7 +1576,7 @@ require([
       "cuaSoMaiNho/mai10",
       GLBRenderer({
         href: "./meshObject/maiNho/cuaSoMaiNho.glb",
-        heading: "508",
+        heading: "328",
       })
     )
   );
@@ -1588,7 +1585,7 @@ require([
       "cuaSoMaiNho/mai11",
       GLBRenderer({
         href: "./meshObject/maiNho/cuaSoMaiNho.glb",
-        heading: "508",
+        heading: "328",
       })
     )
   );
@@ -1597,13 +1594,51 @@ require([
       "cuaSoMaiNho/mai12",
       GLBRenderer({
         href: "./meshObject/maiNho/cuaSoMaiNho.glb",
-        heading: "508",
+        heading: "328",
       })
     )
   );
 
   //3 tuong phai HCN
-  map.add(createGeoJsonLayer("mainho/3tuong_phai_HCN", blockRenderer(4.765, "#D3D3D3")));
+  map.add(
+    createGeoJsonLayer(
+      "mainho/3tuong_phai_HCN",
+      blockRenderer(4.765, "#D3D3D3")
+    )
+  );
   //3 tuong phai Tam giac
-  map.add(createGeoJsonLayer("mainho/3tuong_phai_tam_giac", blockRenderer(2.5, "#D3D3D3")));
+  map.add(
+    createGeoJsonLayer(
+      "mainho/3tuong_phai_tam_giac",
+      blockRenderer(2.5, "#D3D3D3")
+    )
+  );
+
+  map.add(
+    createGeoJsonLayer("mainho/mai_Bac_nho", blockRenderer(0.22, "#8B0000"))
+  );
+  map.add(
+    createGeoJsonLayer(
+      "mainho/mai_Bac_nho copy",
+      blockRenderer(0.22, "#8B0000")
+    )
+  );
+  map.add(
+    createGeoJsonLayer("mainho/mai_Nam_nho", blockRenderer(0.22, "#8B0000"))
+  );
+  map.add(
+    createGeoJsonLayer(
+      "mainho/mai_Nam_nho copy",
+      blockRenderer(0.22, "#8B0000")
+    )
+  );
+  map.add(
+    createGeoJsonLayer("mainho/Nam_tuong_nho", blockRenderer(0.635, "#D3D3D3"))
+  );
+  map.add(
+    createGeoJsonLayer("mainho/Bac_tuong_lon", blockRenderer(2, "#D3D3D3"))
+  );
+  map.add(
+    createGeoJsonLayer("mainho/Bac_tuong_vuong", blockRenderer(2, "#D3D3D3"))
+  );
 });
