@@ -462,13 +462,59 @@ require([
   //END: Cửa Tây
 
   //Start: mai dong ho
+  map.add(
+    createGeoJsonLayer(
+      "thapDongHo/dong_ho_nam",
+      GLBRenderer({
+        href: "./meshObject/thapDongHo/dongHo.glb",
+        heading: "238",
+      })
+    )
+  );
+  map.add(
+    createGeoJsonLayer(
+      "thapDongHo/dong_ho_bac",
+      GLBRenderer({
+        href: "./meshObject/thapDongHo/dongHo.glb",
+        heading: "418",
+      })
+    )
+  );
+  map.add(
+    createGeoJsonLayer(
+      "thapDongHo/dong_ho_dong",
+      GLBRenderer({
+        href: "./meshObject/thapDongHo/dongHo.glb",
+        heading: "328",
+      })
+    )
+  );
+  map.add(
+    createGeoJsonLayer(
+      "thapDongHo/dong_ho_tay",
+      GLBRenderer({
+        href: "./meshObject/thapDongHo/dongHo.glb",
+        heading: "508",
+      })
+    )
+  );
+
+  map.add(
+    createGeoJsonLayer(
+      "thapDongHo/chop_thap_dong_ho",
+      GLBRenderer({
+        href: "./meshObject/thapDongHo/chopThapDongHo.glb",
+        heading: "508",
+      })
+    )
+  );
+
   map.add(createGeoJsonLayer("thapDongHo/mai_noi_thap_dho", blockRenderer(0.5, "#8B0000", "#FFFEE8")));
   map.add(createGeoJsonLayer("thapDongHo/tuong_dongho", blockRenderer(5.9, "#D3D3D3")));
   map.add(createGeoJsonLayer("thapDongHo/tuong_tamgiactrang", blockRenderer(12, "#FFFEE8")));
-  map.add(createGeoJsonLayer("thapDongHo/than_thap", blockRenderer(16.6, "#FFFEE8")));
+  map.add(createGeoJsonLayer("thapDongHo/than_thap", blockRenderer(20, "#FFFEE8")));
   map.add(createGeoJsonLayer("thapDongHo/phan_tren_thanthap", blockRenderer(0.3, "#FFFEE0")));
   map.add(createGeoJsonLayer("thapDongHo/phan_than_ganmai", blockRenderer(1.5, "#FFFEE8")));
-  map.add(createGeoJsonLayer("thapDongHo/mai_thap", blockRenderer(0.2, "#CC6633")));
 
       //START: Phần viền ngoài từ cửa Bắc - Đông, Bắc - Tây
   //2HCN nho len
