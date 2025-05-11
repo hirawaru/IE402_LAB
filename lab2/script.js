@@ -285,8 +285,8 @@ require([
     createGeoJsonLayer(
       "cuaBac/vent1",
       GLBRenderer({
-        href: "./meshObject/cuaBac/cuaThongGioNho.glb",
-        heading: "419",
+        href: "./meshObject/cuaBac/cuaThongGio.glb",
+        heading: "239",
       })
     )
   );
@@ -295,8 +295,8 @@ require([
     createGeoJsonLayer(
       "cuaBac/vent2",
       GLBRenderer({
-        href: "./meshObject/cuaBac/cuaThongGioNho.glb",
-        heading: "419",
+        href: "./meshObject/cuaBac/cuaThongGio.glb",
+        heading: "239",
       })
     )
   );
@@ -305,8 +305,8 @@ require([
     createGeoJsonLayer(
       "cuaBac/vent3",
       GLBRenderer({
-        href: "./meshObject/cuaBac/cuaThongGioNho.glb",
-        heading: "239.25",
+        href: "./meshObject/cuaBac/cuaThongGio.glb",
+        heading: "59",
       })
     )
   );
@@ -315,8 +315,8 @@ require([
     createGeoJsonLayer(
       "cuaBac/vent4",
       GLBRenderer({
-        href: "./meshObject/cuaBac/cuaThongGioNho.glb",
-        heading: "239.25",
+        href: "./meshObject/cuaBac/cuaThongGio.glb",
+        heading: "59",
       })
     )
   );
@@ -349,40 +349,10 @@ require([
   //Thêm mesh Cửa Đông
   map.add(
     createGeoJsonLayer(
-      "cuaDong/middleGate",
-      GLBRenderer({
-        href: "./meshObject/cuaDong/cuaGiua.glb",
-        heading: "328",
-      })
-    )
-  );
-
-  map.add(
-    createGeoJsonLayer(
-      "cuaDong/rightGate",
-      GLBRenderer({
-        href: "./meshObject/cuaDong/cuaPhai.glb",
-        heading: "328",
-      })
-    )
-  );
-
-  map.add(
-    createGeoJsonLayer(
-      "cuaDong/leftGate",
-      GLBRenderer({
-        href: "./meshObject/cuaDong/cuaTrai.glb",
-        heading: "328",
-      })
-    )
-  );
-
-  map.add(
-    createGeoJsonLayer(
       "cuaDong/vent1",
       GLBRenderer({
         href: "./meshObject/cuaDong/cuaThongGio.glb",
-        heading: "419",
+        heading: "329",
       })
     )
   );
@@ -392,7 +362,7 @@ require([
       "cuaDong/vent2",
       GLBRenderer({
         href: "./meshObject/cuaDong/cuaThongGio.glb",
-        heading: "419",
+        heading: "329",
       })
     )
   );
@@ -402,7 +372,7 @@ require([
       "cuaDong/vent3",
       GLBRenderer({
         href: "./meshObject/cuaDong/cuaThongGio.glb",
-        heading: "239.25",
+        heading: "149",
       })
     )
   );
@@ -412,17 +382,17 @@ require([
       "cuaDong/vent4",
       GLBRenderer({
         href: "./meshObject/cuaDong/cuaThongGio.glb",
-        heading: "239.25",
+        heading: "149",
       })
     )
   );
 
   map.add(
     createGeoJsonLayer(
-      "cuaDong/nameBoard",
+      "cuaDong/gate",
       GLBRenderer({
-        href: "./meshObject/cuaDong/bangTen.glb",
-        heading: "328",
+        href: "./meshObject/cuaDong/cuaDong.glb",
+        heading: "329",
       })
     )
   );
@@ -443,40 +413,10 @@ require([
   //Thêm mesh Cửa Tây
   map.add(
     createGeoJsonLayer(
-      "cuaTay/middleGate",
-      GLBRenderer({
-        href: "./meshObject/cuaTay/cuaGiua.glb",
-        heading: "328",
-      })
-    )
-  );
-
-  map.add(
-    createGeoJsonLayer(
-      "cuaTay/rightGate",
-      GLBRenderer({
-        href: "./meshObject/cuaTay/cuaPhai.glb",
-        heading: "328",
-      })
-    )
-  );
-
-  map.add(
-    createGeoJsonLayer(
-      "cuaTay/leftGate",
-      GLBRenderer({
-        href: "./meshObject/cuaTay/cuaTrai.glb",
-        heading: "328",
-      })
-    )
-  );
-
-  map.add(
-    createGeoJsonLayer(
       "cuaTay/vent1",
       GLBRenderer({
         href: "./meshObject/cuaTay/cuaThongGio.glb",
-        heading: "419",
+        heading: "508",
       })
     )
   );
@@ -486,7 +426,7 @@ require([
       "cuaTay/vent2",
       GLBRenderer({
         href: "./meshObject/cuaTay/cuaThongGio.glb",
-        heading: "419",
+        heading: "508",
       })
     )
   );
@@ -496,7 +436,7 @@ require([
       "cuaTay/vent3",
       GLBRenderer({
         href: "./meshObject/cuaTay/cuaThongGio.glb",
-        heading: "239.25",
+        heading: "328",
       })
     )
   );
@@ -506,17 +446,17 @@ require([
       "cuaTay/vent4",
       GLBRenderer({
         href: "./meshObject/cuaTay/cuaThongGio.glb",
-        heading: "239.25",
+        heading: "328",
       })
     )
   );
 
   map.add(
     createGeoJsonLayer(
-      "cuaTay/nameBoard",
+      "cuaTay/gate",
       GLBRenderer({
-        href: "./meshObject/cuaTay/bangTen.glb",
-        heading: "328",
+        href: "./meshObject/cuaTay/cuaTay.glb",
+        heading: "329",
       })
     )
   );
