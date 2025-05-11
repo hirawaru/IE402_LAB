@@ -338,7 +338,10 @@ require([
     createGeoJsonLayer("mainho/Nam_tuong_nho", blockRenderer(0.635, "#D3D3D3"))
   );
   map.add(
-    createGeoJsonLayer("mainho/Bac_tuong_lon", blockRenderer(1.15, "#D3D3D3"))
+    createGeoJsonLayer("mainho/Bac_tuong_lon", blockRenderer(2, "#D3D3D3"))
+  );
+  map.add(
+    createGeoJsonLayer("mainho/Bac_tuong_vuong", blockRenderer(2, "#D3D3D3"))
   );
 });
 
