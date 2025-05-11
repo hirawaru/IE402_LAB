@@ -340,5 +340,10 @@ require([
   map.add(
     createGeoJsonLayer("mainho/Bac_tuong_lon", blockRenderer(1.15, "#D3D3D3"))
   );
+
+  //3 tuong phai HCN
+  map.add(createGeoJsonLayer("mainho/3tuong_phai_HCN", blockRenderer(4.765, "#D3D3D3")));
+  //3 tuong phai Tam giac
+  map.add(createGeoJsonLayer("mainho/3tuong_phai_tam_giac", blockRenderer(2.5, "#D3D3D3")));
 });
 
