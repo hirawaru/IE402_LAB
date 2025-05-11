@@ -92,16 +92,16 @@ require([
   };
 
   // Thêm nền
-  esriRequest("./data/cuaChinh/base.json", json_options).then(
-    function (response) {
-      var graphicsLayer = new GraphicsLayer();
-      console.log(response);
-      response.data.forEach(function (data) {
-        graphicsLayer.add(createGraphic(data));
-      });
-      map.add(graphicsLayer);
-    }
-  );
+  esriRequest("./data/cuaChinh/base.json", json_options).then(function (
+    response
+  ) {
+    var graphicsLayer = new GraphicsLayer();
+    console.log(response);
+    response.data.forEach(function (data) {
+      graphicsLayer.add(createGraphic(data));
+    });
+    map.add(graphicsLayer);
+  });
 
   // Function to create GeoJSONLayer
   function createGeoJsonLayer(name, renderer) {
@@ -328,4 +328,192 @@ require([
   );
 
   //END: Cửa Bắc
+
+  //START: Cửa Đông
+  //Cổng trái, phải
+  map.add(createGeoJsonLayer("cuaDong/data", blockRenderer(4.5, "#D3D3D3"))); //B1 W I1 L1, Q1 Z1 A2 W'
+  map.add(createGeoJsonLayer("cuaDong/data2", blockRenderer(1, "#D3D3D3"))); //D2 F2 N1 G1, E2 G2 V1 S1
+  map.add(createGeoJsonLayer("cuaDong/data3", blockRenderer(0.3, "#D3D3D3"))); //W I1 N1 G1, W' A2 V1 S1
+  map.add(createGeoJsonLayer("cuaDong/data4", blockRenderer(4.5, "#D3D3D3"))); //E1 M1 N1 G1, R1 S1 V1 W1
+
+  //Cổng giữa
+  map.add(createGeoJsonLayer("cuaDong/data5", blockRenderer(5.8, "#D3D3D3"))); //G1 N1 I2 K2, S1 V1 H2 J2
+  map.add(createGeoJsonLayer("cuaDong/data6", blockRenderer(1, "#D3D3D3"))); //K2 I2 O1 H1, J2 H2 U1 T1
+  map.add(createGeoJsonLayer("cuaDong/data7", blockRenderer(0.3, "#D3D3D3"))); //S1 V1 N1 G1
+
+  //Thêm mesh Cửa Đông
+  map.add(
+    createGeoJsonLayer(
+      "cuaDong/middleGate",
+      GLBRenderer({
+        href: "./meshObject/cuaDong/cuaGiua.glb",
+        heading: "328",
+      })
+    )
+  );
+
+  map.add(
+    createGeoJsonLayer(
+      "cuaDong/rightGate",
+      GLBRenderer({
+        href: "./meshObject/cuaDong/cuaPhai.glb",
+        heading: "328",
+      })
+    )
+  );
+
+  map.add(
+    createGeoJsonLayer(
+      "cuaDong/leftGate",
+      GLBRenderer({
+        href: "./meshObject/cuaDong/cuaTrai.glb",
+        heading: "328",
+      })
+    )
+  );
+
+  map.add(
+    createGeoJsonLayer(
+      "cuaDong/vent1",
+      GLBRenderer({
+        href: "./meshObject/cuaDong/cuaThongGio.glb",
+        heading: "419",
+      })
+    )
+  );
+
+  map.add(
+    createGeoJsonLayer(
+      "cuaDong/vent2",
+      GLBRenderer({
+        href: "./meshObject/cuaDong/cuaThongGio.glb",
+        heading: "419",
+      })
+    )
+  );
+
+  map.add(
+    createGeoJsonLayer(
+      "cuaDong/vent3",
+      GLBRenderer({
+        href: "./meshObject/cuaDong/cuaThongGio.glb",
+        heading: "239.25",
+      })
+    )
+  );
+
+  map.add(
+    createGeoJsonLayer(
+      "cuaDong/vent4",
+      GLBRenderer({
+        href: "./meshObject/cuaDong/cuaThongGio.glb",
+        heading: "239.25",
+      })
+    )
+  );
+
+  map.add(
+    createGeoJsonLayer(
+      "cuaDong/nameBoard",
+      GLBRenderer({
+        href: "./meshObject/cuaDong/bangTen.glb",
+        heading: "328",
+      })
+    )
+  );
+  //END: Cửa Đông
+
+  //START: Cửa Tây
+  //Cổng trái, phải
+  map.add(createGeoJsonLayer("cuaTay/data", blockRenderer(4.5, "#D3D3D3"))); //V2 W2 C3 A3, Q3 P3 O3 M3
+  map.add(createGeoJsonLayer("cuaTay/data2", blockRenderer(1, "#D3D3D3"))); //Z2 B3 E3 N2, R3 N3 K3 T2
+  map.add(createGeoJsonLayer("cuaTay/data3", blockRenderer(0.3, "#D3D3D3"))); //V2 A3 E3 N2, P3 O3 K3 T2
+  map.add(createGeoJsonLayer("cuaTay/data4", blockRenderer(4.5, "#D3D3D3"))); //M2 N2 E3 D3, T2 U2 L3 K3
+
+  //Cổng giữa
+  map.add(createGeoJsonLayer("cuaTay/data5", blockRenderer(5.8, "#D3D3D3"))); //N2 E3 G3 P2, T2 K3 I3 R2
+  map.add(createGeoJsonLayer("cuaTay/data6", blockRenderer(1, "#D3D3D3"))); //O2 F3 G3 P2, R2 I3 J3 S2
+  map.add(createGeoJsonLayer("cuaTay/data7", blockRenderer(0.3, "#D3D3D3"))); //N2 E3 K3 T2
+
+  //Thêm mesh Cửa Tây
+  map.add(
+    createGeoJsonLayer(
+      "cuaTay/middleGate",
+      GLBRenderer({
+        href: "./meshObject/cuaTay/cuaGiua.glb",
+        heading: "328",
+      })
+    )
+  );
+
+  map.add(
+    createGeoJsonLayer(
+      "cuaTay/rightGate",
+      GLBRenderer({
+        href: "./meshObject/cuaTay/cuaPhai.glb",
+        heading: "328",
+      })
+    )
+  );
+
+  map.add(
+    createGeoJsonLayer(
+      "cuaTay/leftGate",
+      GLBRenderer({
+        href: "./meshObject/cuaTay/cuaTrai.glb",
+        heading: "328",
+      })
+    )
+  );
+
+  map.add(
+    createGeoJsonLayer(
+      "cuaTay/vent1",
+      GLBRenderer({
+        href: "./meshObject/cuaTay/cuaThongGio.glb",
+        heading: "419",
+      })
+    )
+  );
+
+  map.add(
+    createGeoJsonLayer(
+      "cuaTay/vent2",
+      GLBRenderer({
+        href: "./meshObject/cuaTay/cuaThongGio.glb",
+        heading: "419",
+      })
+    )
+  );
+
+  map.add(
+    createGeoJsonLayer(
+      "cuaTay/vent3",
+      GLBRenderer({
+        href: "./meshObject/cuaTay/cuaThongGio.glb",
+        heading: "239.25",
+      })
+    )
+  );
+
+  map.add(
+    createGeoJsonLayer(
+      "cuaTay/vent4",
+      GLBRenderer({
+        href: "./meshObject/cuaTay/cuaThongGio.glb",
+        heading: "239.25",
+      })
+    )
+  );
+
+  map.add(
+    createGeoJsonLayer(
+      "cuaTay/nameBoard",
+      GLBRenderer({
+        href: "./meshObject/cuaTay/bangTen.glb",
+        heading: "328",
+      })
+    )
+  );
+  //END: Cửa Tây
 });
