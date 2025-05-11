@@ -10,11 +10,11 @@ function blockRenderer(height, color, edgeColor) {
           material: {
             color: color,
           },
-           outline: {
-            color: edgeColor,  // Màu viền
-            size: 5 // Độ dày viền
-          }
-        }          
+          outline: {
+            color: edgeColor, // Màu viền
+            size: 5, // Độ dày viền
+          },
+        },
       ],
     },
   };
@@ -333,7 +333,6 @@ require([
 
   //END: Cửa Bắc
 
-
   //START: Cửa Đông
   //Cổng trái, phải
   map.add(createGeoJsonLayer("cuaDong/data", blockRenderer(4.5, "#D3D3D3"))); //B1 W I1 L1, Q1 Z1 A2 W'
@@ -522,12 +521,181 @@ require([
   );
   //END: Cửa Tây
 
+  //StartChinhTay
+
+  esriRequest("./data/chinhTay/cuaChinhTay.geojson", {
+    responseType: "json",
+  }).then((response) => {
+    const features = response.data.features;
+
+    features.forEach((feature) => {
+      if (feature.geometry.type === "MultiPoint") {
+        feature.geometry.coordinates.forEach((point) => {
+          const graphic = new Graphic({
+            geometry: {
+              type: "point",
+              longitude: point[0],
+              latitude: point[1],
+              z: point[2],
+            },
+            symbol: GLBRenderer({
+              href: "./meshObject/cuaSo/cuaSo.glb",
+              heading: "239",
+            }).symbol,
+          });
+
+          // Add the graphic to a GraphicsLayer
+          const graphicsLayer = new GraphicsLayer();
+          graphicsLayer.add(graphic);
+          map.add(graphicsLayer);
+        });
+      }
+    });
+  });
+
+  esriRequest("./data/chinhTay/cuaChinhTay_2.geojson", {
+    responseType: "json",
+  }).then((response) => {
+    const features = response.data.features;
+
+    features.forEach((feature) => {
+      if (feature.geometry.type === "MultiPoint") {
+        feature.geometry.coordinates.forEach((point) => {
+          const graphic = new Graphic({
+            geometry: {
+              type: "point",
+              longitude: point[0],
+              latitude: point[1],
+              z: point[2],
+            },
+            symbol: GLBRenderer({
+              href: "./meshObject/cuaSo/cuaSo.glb",
+              heading: "148",
+            }).symbol,
+          });
+
+          // Add the graphic to a GraphicsLayer
+          const graphicsLayer = new GraphicsLayer();
+          graphicsLayer.add(graphic);
+          map.add(graphicsLayer);
+        });
+      }
+    });
+  });
+
+  map.add(
+    createGeoJsonLayer("chinhTay/maiChinhTay", blockRenderer(1.9, "#D3D3D3"))
+  ); //O K' D1 S
+
+  map.add(
+    createGeoJsonLayer("chinhTay/maiChinhTay_2", blockRenderer(1.9, "#D3D3D3"))
+  ); //O K' D1 S
+
+  //End chinh tay
+
+  //Start: Chinh dong
+  esriRequest("./data/chinhDong/cuaChinhDong.geojson", {
+    responseType: "json",
+  }).then((response) => {
+    const features = response.data.features;
+
+    features.forEach((feature) => {
+      if (feature.geometry.type === "MultiPoint") {
+        feature.geometry.coordinates.forEach((point) => {
+          const graphic = new Graphic({
+            geometry: {
+              type: "point",
+              longitude: point[0],
+              latitude: point[1],
+              z: point[2],
+            },
+            symbol: GLBRenderer({
+              href: "./meshObject/cuaSo/cuaSo.glb",
+              heading: "58",
+            }).symbol,
+          });
+
+          // Add the graphic to a GraphicsLayer
+          const graphicsLayer = new GraphicsLayer();
+          graphicsLayer.add(graphic);
+          map.add(graphicsLayer);
+        });
+      }
+    });
+  });
+
+  esriRequest("./data/chinhDong/cuaChinhDong_2.geojson", {
+    responseType: "json",
+  }).then((response) => {
+    const features = response.data.features;
+
+    features.forEach((feature) => {
+      if (feature.geometry.type === "MultiPoint") {
+        feature.geometry.coordinates.forEach((point) => {
+          const graphic = new Graphic({
+            geometry: {
+              type: "point",
+              longitude: point[0],
+              latitude: point[1],
+              z: point[2],
+            },
+            symbol: GLBRenderer({
+              href: "./meshObject/cuaSo/cuaSo.glb",
+              heading: "148",
+            }).symbol,
+          });
+
+          // Add the graphic to a GraphicsLayer
+          const graphicsLayer = new GraphicsLayer();
+          graphicsLayer.add(graphic);
+          map.add(graphicsLayer);
+        });
+      }
+    });
+  });
+  map.add(
+    createGeoJsonLayer("chinhDong/maiChinhDong", blockRenderer(1.9, "#D3D3D3"))
+  ); //O K' D1 S
+  map.add(
+    createGeoJsonLayer(
+      "chinhDong/maiChinhDong_2",
+      blockRenderer(1.9, "#D3D3D3")
+    )
+  ); //O K' D1 S
+  //End chinh dong
+
   //Start: mai dong ho
-  map.add(createGeoJsonLayer("thapDongHo/mai_noi_thap_dho", blockRenderer(0.5, "#8B0000", "#FFFEE8")));
-  map.add(createGeoJsonLayer("thapDongHo/tuong_dongho", blockRenderer(5.9, "#D3D3D3")));
-  map.add(createGeoJsonLayer("thapDongHo/tuong_tamgiactrang", blockRenderer(12, "#FFFEE8")));
-  map.add(createGeoJsonLayer("thapDongHo/than_thap", blockRenderer(16.6, "#FFFEE8")));
-  map.add(createGeoJsonLayer("thapDongHo/phan_tren_thanthap", blockRenderer(0.3, "#FFFEE0")));
-  map.add(createGeoJsonLayer("thapDongHo/phan_than_ganmai", blockRenderer(1.5, "#FFFEE8")));
-  map.add(createGeoJsonLayer("thapDongHo/mai_thap", blockRenderer(0.2, "#CC6633")));
+  map.add(
+    createGeoJsonLayer(
+      "thapDongHo/mai_noi_thap_dho",
+      blockRenderer(0.5, "#8B0000", "#FFFEE8")
+    )
+  );
+  map.add(
+    createGeoJsonLayer("thapDongHo/tuong_dongho", blockRenderer(5.9, "#D3D3D3"))
+  );
+  map.add(
+    createGeoJsonLayer(
+      "thapDongHo/tuong_tamgiactrang",
+      blockRenderer(12, "#FFFEE8")
+    )
+  );
+  map.add(
+    createGeoJsonLayer("thapDongHo/than_thap", blockRenderer(16.6, "#FFFEE8"))
+  );
+  map.add(
+    createGeoJsonLayer(
+      "thapDongHo/phan_tren_thanthap",
+      blockRenderer(0.3, "#FFFEE0")
+    )
+  );
+  map.add(
+    createGeoJsonLayer(
+      "thapDongHo/phan_than_ganmai",
+      blockRenderer(1.5, "#FFFEE8")
+    )
+  );
+  map.add(
+    createGeoJsonLayer("thapDongHo/mai_thap", blockRenderer(0.2, "#CC6633"))
+  );
 });
