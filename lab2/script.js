@@ -367,6 +367,13 @@ require([
   );
 
   map.add(
+    createGeoJsonLayer("mainho/Bac_tuong_lon", blockRenderer(2, "#D3D3D3"))
+  );
+  map.add(
+    createGeoJsonLayer("mainho/Bac_tuong_vuong", blockRenderer(2, "#D3D3D3")));
+ 
+  map.add(
+  
     createGeoJsonLayer(
       "cuaDong/vent3",
       GLBRenderer({
@@ -374,7 +381,9 @@ require([
         heading: "149",
       })
     )
-  );
+    );
+
+  
 
   map.add(
     createGeoJsonLayer(
