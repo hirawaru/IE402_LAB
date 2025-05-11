@@ -10,11 +10,11 @@ function blockRenderer(height, color, edgeColor) {
           material: {
             color: color,
           },
-           outline: {
-            color: edgeColor,  // Màu viền
-            size: 5 // Độ dày viền
-          }
-        }          
+          outline: {
+            color: edgeColor, // Màu viền
+            size: 5, // Độ dày viền
+          },
+        },
       ],
     },
   };
@@ -333,7 +333,6 @@ require([
 
   //END: Cửa Bắc
 
-
   //START: Cửa Đông
   //Cổng trái, phải
   map.add(createGeoJsonLayer("cuaDong/data", blockRenderer(4.5, "#D3D3D3"))); //B1 W I1 L1, Q1 Z1 A2 W'
@@ -508,6 +507,152 @@ require([
       })
     )
   );
+  //END: Cửa Tây
+
+  //StartChinhTay
+
+  esriRequest("./data/chinhTay/cuaChinhTay.geojson", {
+    responseType: "json",
+  }).then((response) => {
+    const features = response.data.features;
+
+    features.forEach((feature) => {
+      if (feature.geometry.type === "MultiPoint") {
+        feature.geometry.coordinates.forEach((point) => {
+          const graphic = new Graphic({
+            geometry: {
+              type: "point",
+              longitude: point[0],
+              latitude: point[1],
+              z: point[2],
+            },
+            symbol: GLBRenderer({
+              href: "./meshObject/cuaSo/cuaSo.glb",
+              heading: "239",
+            }).symbol,
+          });
+
+          // Add the graphic to a GraphicsLayer
+          const graphicsLayer = new GraphicsLayer();
+          graphicsLayer.add(graphic);
+          map.add(graphicsLayer);
+        });
+      }
+    });
+  });
+
+  esriRequest("./data/chinhTay/cuaChinhTay_2.geojson", {
+    responseType: "json",
+  }).then((response) => {
+    const features = response.data.features;
+
+    features.forEach((feature) => {
+      if (feature.geometry.type === "MultiPoint") {
+        feature.geometry.coordinates.forEach((point) => {
+          const graphic = new Graphic({
+            geometry: {
+              type: "point",
+              longitude: point[0],
+              latitude: point[1],
+              z: point[2],
+            },
+            symbol: GLBRenderer({
+              href: "./meshObject/cuaSo/cuaSo.glb",
+              heading: "148",
+            }).symbol,
+          });
+
+          // Add the graphic to a GraphicsLayer
+          const graphicsLayer = new GraphicsLayer();
+          graphicsLayer.add(graphic);
+          map.add(graphicsLayer);
+        });
+      }
+    });
+  });
+
+  map.add(
+    createGeoJsonLayer("chinhTay/maiChinhTay", blockRenderer(1.9, "#D3D3D3"))
+  ); //O K' D1 S
+
+  map.add(
+    createGeoJsonLayer("chinhTay/maiChinhTay_2", blockRenderer(1.9, "#D3D3D3"))
+  ); //O K' D1 S
+
+  //End chinh tay
+
+  //Start: Chinh dong
+  esriRequest("./data/chinhDong/cuaChinhDong.geojson", {
+    responseType: "json",
+  }).then((response) => {
+    const features = response.data.features;
+
+    features.forEach((feature) => {
+      if (feature.geometry.type === "MultiPoint") {
+        feature.geometry.coordinates.forEach((point) => {
+          const graphic = new Graphic({
+            geometry: {
+              type: "point",
+              longitude: point[0],
+              latitude: point[1],
+              z: point[2],
+            },
+            symbol: GLBRenderer({
+              href: "./meshObject/cuaSo/cuaSo.glb",
+              heading: "58",
+            }).symbol,
+          });
+
+          // Add the graphic to a GraphicsLayer
+          const graphicsLayer = new GraphicsLayer();
+          graphicsLayer.add(graphic);
+          map.add(graphicsLayer);
+        });
+      }
+    });
+  });
+
+  esriRequest("./data/chinhDong/cuaChinhDong_2.geojson", {
+    responseType: "json",
+  }).then((response) => {
+    const features = response.data.features;
+
+    features.forEach((feature) => {
+      if (feature.geometry.type === "MultiPoint") {
+        feature.geometry.coordinates.forEach((point) => {
+          const graphic = new Graphic({
+            geometry: {
+              type: "point",
+              longitude: point[0],
+              latitude: point[1],
+              z: point[2],
+            },
+            symbol: GLBRenderer({
+              href: "./meshObject/cuaSo/cuaSo.glb",
+              heading: "148",
+            }).symbol,
+          });
+
+          // Add the graphic to a GraphicsLayer
+          const graphicsLayer = new GraphicsLayer();
+          graphicsLayer.add(graphic);
+          map.add(graphicsLayer);
+        });
+      }
+    });
+  });
+  map.add(
+    createGeoJsonLayer("chinhDong/maiChinhDong", blockRenderer(1.9, "#D3D3D3"))
+  ); //O K' D1 S
+  map.add(
+    createGeoJsonLayer(
+      "chinhDong/maiChinhDong_2",
+      blockRenderer(1.9, "#D3D3D3")
+    )
+  ); //O K' D1 S
+  //End chinh dong
+
+
   //CuaSo4
   map.add(
     createGeoJsonLayer(
